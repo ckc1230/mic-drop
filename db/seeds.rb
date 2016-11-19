@@ -28,8 +28,12 @@ Microphone.create(manufacturer: audio_technica, model: "AT4033", kind: "large-co
 Microphone.create(manufacturer: royer, model: "R-121", kind: "ribbon", phantom: false, polar_pattern: "cardioid")
 Microphone.create(manufacturer: royer, model: "SF-2", phantom: false, polar_pattern: "cardioid")
 
-first_shootout = Shootout.create()
-second_shootout = Shootout.create()
+guitar = Instrument.create(name:"guitar")
+vocals = Instrument.create(name:"vocals")
+
+
+first_shootout = Shootout.create(instrument_id: guitar.id)
+second_shootout = Shootout.create(instrument_id: vocals.id)
 
 ShootoutMicrophone.create(shootout_id: first_shootout.id, microphone_id: sm57.id)
 ShootoutMicrophone.create(shootout_id: first_shootout.id, microphone_id: sm81.id)
