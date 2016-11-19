@@ -1,12 +1,48 @@
 <h1>Shootouts</h1>
 
 <% @shootouts.each do |shootout|  %>
-	<ul>
-		<% shootout.shootout_microphones.each do |sm| %>
-		<li>
-			<span><%= sm.microphone.manufacturer.name %></span>
-			<span><%= sm.microphone.model %></span>
-		</li>
-		<% end  %>
-	</ul>
+
+
+<div class="container">
+		<div class="col md12">
+			<div class="row">
+	            <h4>Microphone Shootout</h4>
+	        </div>
+	        <div class="row">
+	        	<div id="nowPlay">
+                    <span class="left" id="current-mic">
+                    <%= shootout.shootout_microphones.first.microphone.manufacturer.name %>
+                    <%= shootout.shootout_microphones.first.microphone.model %></span>
+	            </div>
+	        </div>
+			<div class="row">
+				<div id="audiowrap">
+                    <div id="audio0">
+                        <audio preload id="audio1" controls="controls">
+                        	<source id="audio-to-play" src="">
+                        	Your browser does not support HTML5 Audio!
+                        </audio>
+                    </div>
+                </div>	
+			</div>
+
+
+            <div id="plList" class="collection">
+				<% shootout.shootout_microphones.each do |sm| %>
+				<% mic = sm.microphone %>
+	                        <%= link_to(mic) do %>
+	            	<a href="#" id="luke-div" class="collection-item">
+	                    <div class="plItem" >
+		                        <div class="plTitle">
+		                        	<span><%= mic.manufacturer.name %> <%= mic.model %></span>
+		                        	<span class="plLength">1:00</span>
+		                        </div>
+	                    </div>
+	                </a>
+	                <% end  %>
+	            <% end  %>
+
+            </div>
+		</div>
+    </div>
 <% end  %>
