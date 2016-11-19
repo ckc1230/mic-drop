@@ -14,6 +14,13 @@
  *= require_self
  */
 
-.plLength {
+.shootout-item-length {
 	float: right;
+	margin-right: 30px;
+}
+
+.shootout-item {
+	height: 50px;
+	line-height: 50px;
+	vertical-align: middle;
 }

@@ -4,7 +4,7 @@
 
 
 <div class="container">
-		<div class="col md12">
+		<div class="col m12">
 			<div class="row">
 	            <h4>Microphone Shootout</h4>
 	        </div>
@@ -26,22 +26,24 @@
                 </div>	
 			</div>
 
-
-            <div id="plList" class="collection">
-				<% shootout.shootout_microphones.each do |sm| %>
-				<% mic = sm.microphone %>
-	                        <%= link_to(mic) do %>
-	            	<a href="#" id="luke-div" class="collection-item">
-	                    <div class="plItem" >
-		                        <div class="plTitle">
-		                        	<span><%= mic.manufacturer.name %> <%= mic.model %></span>
-		                        	<span class="plLength">1:00</span>
-		                        </div>
+			<div class="row">
+	            <div id="shootout-list" class="collection">
+					<% shootout.shootout_microphones.each do |sm| %>
+					<% mic = sm.microphone %>
+		                        
+		            	<a href="#" id="mic-<%= mic.id %>" class="collection-item col m10">
+		                    <div class="shootout-item" >
+			                        <div class="shootout-item-title">
+			                        	<span><%= mic.manufacturer.name %> <%= mic.model %></span>
+			                        	<span class="shootout-item-length">1:00</span>
+			                        </div>
+		                    </div>
+		                </a>
+	                    <div class="col m2">
+								<%= link_to 'More Info', microphone_path(mic), class: "btn" %>
 	                    </div>
-	                </a>
-	                <% end  %>
-	            <% end  %>
-
+		            <% end  %>
+	            </div>
             </div>
 		</div>
     </div>
