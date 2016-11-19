@@ -1,0 +1,12 @@
+<h1>Shootouts</h1>
+
+<% @shootouts.each do |shootout|  %>
+	<ul>
+		<% shootout.shootout_microphones.each do |sm| %>
+		<li>
+			<span><%= sm.microphone.manufacturer.name %></span>
+			<span><%= sm.microphone.model %></span>
+		</li>
+		<% end  %>
+	</ul>
+<% end  %>
