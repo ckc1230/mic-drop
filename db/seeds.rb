@@ -26,13 +26,19 @@ Microphone.create(manufacturer: royer, model: "SF-2", phantom: false, polar_patt
 
 guitar = Instrument.create(name:"guitar", image: "http://hd.wallpaperswide.com/thumbs/acoustic_guitar-t2.jpg")
 vocals = Instrument.create(name:"vocals")
+piano = Instrument.create(name:"piano")
 
 
 first_shootout = Shootout.create(instrument_id: guitar.id)
 second_shootout = Shootout.create(instrument_id: vocals.id)
+third_shootout = Shootout.create(instrument_id: piano.id)
 
-ShootoutMicrophone.create(shootout_id: first_shootout.id, microphone_id: sm57.id)
-ShootoutMicrophone.create(shootout_id: first_shootout.id, microphone_id: sm81.id)
-ShootoutMicrophone.create(shootout_id: second_shootout.id, microphone_id: sm7.id)
-ShootoutMicrophone.create(shootout_id: second_shootout.id, microphone_id: c414.id)
-ShootoutMicrophone.create(shootout_id: second_shootout.id, microphone_id: u87.id)
+ShootoutMicrophone.create(shootout_id: first_shootout.id, microphone_id: sm57.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/akbar.mp3'))
+ShootoutMicrophone.create(shootout_id: first_shootout.id, microphone_id: sm81.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/han.mp3'))
+ShootoutMicrophone.create(shootout_id: second_shootout.id, microphone_id: sm7.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/luke.mp3'))
+ShootoutMicrophone.create(shootout_id: second_shootout.id, microphone_id: c414.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/chewie.mp3'))
+ShootoutMicrophone.create(shootout_id: second_shootout.id, microphone_id: u87.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/luke.mp3'))
+
+ShootoutMicrophone.create(shootout_id: third_shootout.id, microphone_id: sm7.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/luke.mp3'))
+ShootoutMicrophone.create(shootout_id: third_shootout.id, microphone_id: c414.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/chewie.mp3'))
+ShootoutMicrophone.create(shootout_id: third_shootout.id, microphone_id: u87.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/luke.mp3'))
