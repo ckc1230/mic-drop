@@ -1,0 +1,39 @@
+<div class="container shootout-container">
+	<div class="col m12">
+        <div class="row">
+        	<div class="current-mic col">
+                <%= shootout.shootout_microphones.first.microphone.manufacturer.name %>
+                <%= shootout.shootout_microphones.first.microphone.model %>
+            </div>
+           	<div class="current-instrument col right">
+                <%= shootout.instrument.name.capitalize %>
+            </div>
+        </div>
+		<div class="row">
+			<div class="audiowrap">
+                <audio preload class="audio-track" controls="controls" id="shootout-audio-<%= shootout.id %>">
+                	<source src="">
+                	Your browser does not support HTML5 Audio!
+                </audio>
+            </div>	
+		</div>
+		<div class="row">
+            <div class="collection shootout-list">
+				<% shootout.shootout_microphones.each do |sm| %>
+				<% mic = sm.microphone %>         
+	            	<a href="#" id="shootout-<%= shootout.id %>-sm-<%= sm.id %>" class="collection-item col m10">
+	                    <div class="shootout-item" >
+	                        <div class="shootout-item-title">
+	                        	<span><%= mic.manufacturer.name %> <%= mic.model %></span>
+	                        	<span class="shootout-item-length">1:00</span>
+	                        </div>
+	                    </div>
+	                </a>
+                    <div class="col m2">
+						<%= link_to 'Info', microphone_path(mic), class: "btn" %>
+                    </div>
+	            <% end  %>
+            </div>
+        </div>
+	</div>
+</div>
