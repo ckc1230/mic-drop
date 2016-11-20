@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119213455) do
+ActiveRecord::Schema.define(version: 20161120020658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20161119213455) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "image"
   end
 
   create_table "manufacturers", force: :cascade do |t|
@@ -34,9 +35,13 @@ ActiveRecord::Schema.define(version: 20161119213455) do
     t.boolean  "phantom"
     t.string   "polar_pattern"
     t.string   "spec_sheet"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "manufacturer_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["manufacturer_id"], name: "index_microphones_on_manufacturer_id", using: :btree
   end
 
