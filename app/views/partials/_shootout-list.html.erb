@@ -12,7 +12,7 @@
 		<div class="row">
 			<div class="audiowrap">
                 <audio preload class="audio-track" controls="controls" id="shootout-audio-<%= shootout.id %>">
-                	<source src="">
+                	<source src="<%= shootout.shootout_microphones.first.audio.url %>">
                 	Your browser does not support HTML5 Audio!
                 </audio>
             </div>	

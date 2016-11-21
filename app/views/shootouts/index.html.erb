@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row center">
 	<% @manufacturers.each do |manufacturer|  %>
 		<%= link_to(manufacturer) do %>
-		<div class="col m2 manu-img-div">
+		<div class="manu-img-div">
 			<%= image_tag manufacturer.logo.url, class: "responsive-img manu-img" %>
 		</div>
 		<% end  %>

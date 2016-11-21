@@ -14,12 +14,17 @@
  *= require_self
  */
  
+body {
+    background: white;
+}
+
 .main-nav {
     height: 65px;
     line-height: 65px;
 /*    background: transparent;
 */    background: black;
     box-shadow: none;
+    margin-bottom: 30px;
 }
 
 .nav-wrapper {
@@ -115,11 +120,34 @@
 }
 
 .shootout-container {
-	background: beige;
-	padding: 30px 30px 0 30px;
+/*	background: beige;
+*/	padding: 30px 30px 0 30px;
 	margin-top: 30px;
 	color: white;
-	border: 2px solid white;
+	border: 5px solid black;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.manu-img-div {
+    height: 120px;
+    line-height: 120px;
+    width: 120px;
+    display: inline-block;
+    margin: 20px;
+    background: white;
+    padding: 5px;
+}
+
+.manu-row {
+    margin: 0 auto;
+}
+
+.manu-img {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    max-height: 120px;
 }
 
 .audio-track {
