@@ -13,10 +13,6 @@
  *= require_tree .
  *= require_self
  */
- 
-body {
-    background: white;
-}
 
 .main-nav {
     height: 65px;
@@ -78,6 +74,7 @@ body {
 
 .brand-logo {
     margin-left: 20px;
+    font-family: 'Bungee Inline', cursive;
 }
 
 .fullscreen-bg {

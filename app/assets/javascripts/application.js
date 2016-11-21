@@ -14,3 +14,22 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$( document ).ready(function() {
+  console.log( "ready!" );
+  $('#mute-button').on('click', muteVideo);
+  $(".collection-item").click(playSound)
+});
+
+function playSound(e) {
+  e.preventDefault();
+  newSource = (this.id);
+  $(this).closest('.shootout-container').find('.audio-source').attr("src", newSource)
+  $(this).closest('.shootout-container').find(".audio-track")[0].load();
+  $(this).closest('.shootout-container').find(".audio-track")[0].play();
+}
+
+function muteVideo() {
+  $('#intro-video').prop('muted', !$('#intro-video').prop('muted'));
+  $('#intro-video').prop('muted')? $('#mute-icon').html('volume_off'): $('#mute-icon').html('volume_up');
+}

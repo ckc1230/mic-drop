@@ -1,3 +1,4 @@
+
 <div class="container shootout-container" style="background:url('<%= shootout.instrument.image.url %>'); background-size: cover;">
 	<div class="col m12">
         <div class="row">
@@ -12,7 +13,7 @@
 		<div class="row">
 			<div class="audiowrap">
                 <audio preload class="audio-track" controls="controls" id="shootout-audio-<%= shootout.id %>">
-                	<source src="<%= shootout.shootout_microphones.first.audio.url %>">
+                <source class="audio-source" src="<%= shootout.shootout_microphones.first.audio.url %>">
                 	Your browser does not support HTML5 Audio!
                 </audio>
             </div>	
@@ -21,7 +22,7 @@
             <div class="collection shootout-list">
 				<% shootout.shootout_microphones.each do |sm| %>
 				<% mic = sm.microphone %>         
-	            	<a href="#" id="shootout-<%= shootout.id %>-sm-<%= sm.id %>" class="collection-item col m10">
+	            	<a href="#" id="<%= sm.audio.url %>" class="collection-item col m10">
 	                    <div class="shootout-item" >
 	                        <div class="shootout-item-title">
 	                        	<span><%= mic.manufacturer.name %> <%= mic.model %></span>
