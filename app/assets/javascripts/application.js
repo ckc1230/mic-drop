@@ -25,6 +25,9 @@ function playSound(e) {
   e.preventDefault();
   newSource = (this.id);
   $(this).closest('.shootout-container').find('.audio-source').attr("src", newSource)
+  $('audio').each(function(){
+    $(this)[0].pause();
+  }); 
   $(this).closest('.shootout-container').find(".audio-track")[0].load();
   $(this).closest('.shootout-container').find(".audio-track")[0].play();
 }
