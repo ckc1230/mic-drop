@@ -1,8 +1,10 @@
 <div class="row">
 	<% @manufacturers.each do |manufacturer|  %>
+		<%= link_to(manufacturer) do %>
 		<div class="col m2 manu-img-div">
 			<%= image_tag manufacturer.logo.url, class: "responsive-img manu-img" %>
 		</div>
+		<% end  %>
 	<% end  %>
 </div>
 
