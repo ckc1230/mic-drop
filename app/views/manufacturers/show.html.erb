@@ -1,0 +1,8 @@
+<div class="row">
+	<% @manufacturer.microphones.each do |microphone|  %>
+		
+		<div class="col m2 manu-img-div">
+			<%= image_tag microphone.image.url, class: "responsive-img" %>
+		</div>
+	<% end  %>
+</div>
