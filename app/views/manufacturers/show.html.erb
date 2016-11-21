@@ -1,8 +1,27 @@
-<div class="row">
-	<% @manufacturer.microphones.each do |microphone|  %>
+<div class="container">
+<% @manufacturer.microphones.each do |microphone|  %>
+	<div class="row">
 		
-		<div class="col m2 manu-img-div">
+		<div class="col m2 offset-m2">
 			<%= image_tag microphone.image.url, class: "responsive-img" %>
 		</div>
-	<% end  %>
+		<div class="col m4">
+			<h5><%= microphone.manufacturer.name %> <%= microphone.model %></h5>
+			<table>
+			  <tr>
+			    <th class="mic-table-header">Type:</th>
+			    <td class="mic-table-data"><%= microphone.kind %></td>
+			  </tr>
+			  <tr>
+			    <th class="mic-table-header">Phantom:</th>
+			    <td class="mic-table-data"><%= microphone.phantom %></td>
+			  </tr>
+			  <tr>
+			    <th class="mic-table-header">Polar Pattern:</th>
+			    <td class="mic-table-data"><%= microphone.polar_pattern %></td>
+			  </tr>
+			</table>
+		</div>
+	</div>
+<% end  %>
 </div>
