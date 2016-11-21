@@ -1,6 +1,7 @@
 class ShootoutsController < ApplicationController
 	def index
 		@shootouts = Shootout.all
+		@manufacturers = Manufacturer.all
 	end
 
 	def show

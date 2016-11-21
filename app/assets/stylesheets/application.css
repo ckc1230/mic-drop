@@ -13,6 +13,90 @@
  *= require_tree .
  *= require_self
  */
+ 
+.main-nav {
+    height: 65px;
+    line-height: 65px;
+/*    background: transparent;
+*/    background: black;
+    box-shadow: none;
+}
+
+.nav-wrapper {
+    margin-right: 30px;
+}
+
+#intro-text-wrapper {
+    background: rgba(0,0,0,0.3);
+    height: 100%;
+}
+
+#intro-text-box {
+    color: white;
+    text-align: left;
+    display: table;
+    height: 100%;
+    width: 50%;
+    margin-left: 100px;
+}
+
+#intro-text {
+    display: table-cell;
+    /*vertical-align: middle;*/
+    padding-top: 400px;
+    font-family: Tahoma, sans-serif;
+}
+
+#mute-button {
+    background: transparent;
+    border: none;
+    margin-right: 20px;
+}
+
+#intro-top {
+	vertical-align: middle;
+}
+
+#intro-header {
+	display: inline-block;
+	margin: 0;
+}
+
+#enter-button {
+	margin: 0 0 20px 20px;
+	vertical-align: middle;
+}
+
+#mute-icon {
+    font-size: 25px
+}
+
+.brand-logo {
+    margin-left: 20px;
+}
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+#sign-up-form {
+    background: white;
+}
+
 
 .shootout-list {
 	margin: 0 0 0 0;

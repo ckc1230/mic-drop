@@ -1,5 +1,12 @@
-<h1>Shootouts</h1>
+<div class="row">
+	<% @manufacturers.each do |manufacturer|  %>
+		<div class="col m2 manu-img-div">
+			<%= image_tag manufacturer.logo.url, class: "responsive-img manu-img" %>
+		</div>
+	<% end  %>
+</div>
 
 <% @shootouts.each do |shootout|  %>
 	<%= render 'partials/shootout-list', :shootout => shootout %>
 <% end  %>
+
