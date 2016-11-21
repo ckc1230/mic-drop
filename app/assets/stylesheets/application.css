@@ -100,6 +100,7 @@
 
 .shootout-list {
 	margin: 0 0 0 0;
+    border: none;
 }
 
 .shootout-item-length {
@@ -134,4 +135,13 @@
 .mic-table-header, .mic-table-data {
 	padding: 2px;
 	width: 100px;
+}
+
+.mic-info-row {
+    margin: 50px 20px 0 30px;
+}
+
+.mic-info-image {
+    border: 5px solid black;
+    padding: 20px;
 }

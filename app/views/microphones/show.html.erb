@@ -1,4 +1,4 @@
-<div class="row mic-info">
+<div class="row mic-info-row">
 	<div class="mic-info-image col m3">
 		<%= image_tag @microphone.image.url, class: "responsive-img" %>
 	</div>
@@ -24,7 +24,6 @@
 		</table>
 	</div>
 </div>
-
 <% @microphone.shootouts.each do |shootout|  %>
 	<%= render 'partials/shootout-list', :shootout => shootout %>
 <% end  %>
