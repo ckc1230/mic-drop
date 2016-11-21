@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-$( document ).ready(function() {
+$(document).on('turbolinks:load', function() {
   console.log( "ready!" );
   $('#mute-button').on('click', muteVideo);
   $(".collection-item").click(playSound)
