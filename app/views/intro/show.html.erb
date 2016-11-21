@@ -1,5 +1,9 @@
 <div class="fullscreen-bg">
-	<%= video_tag("intro.mov", autoplay: true, loop: true, class: "fullscreen-bg-video", id: "intro-video") %>
+<!-- 	<video class="responsive-video fullscreen-bg-video", autoplay: true, loop: true, id="intro-video">
+    <source src="intro.mov" type="video/mp4">
+  </video> -->
+
+	<%= video_tag("intro.mov", loop: true, muted: true, autoplay: true, class: "fullscreen-bg-video responsive-video", id: "intro-video") %>
 	<div id="intro-text-wrapper">
 		<div id="intro-text-box">
 			<div id="intro-text">
