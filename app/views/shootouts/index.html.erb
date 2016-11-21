@@ -1,4 +1,5 @@
-<div class="row center">
+<div class="row center index-section-row">
+	<h5 class="left-align index-section-header">Manufacturers</h5><hr class="index-section-hr">
 	<% @manufacturers.each do |manufacturer|  %>
 		<%= link_to(manufacturer) do %>
 		<div class="manu-img-div">
@@ -7,6 +8,20 @@
 		<% end  %>
 	<% end  %>
 </div>
+
+<div class="row center index-section-row">
+	<h5 class="left-align index-section-header">Instruments</h5><hr class="index-section-hr">
+	<% @instruments.each do |instrument|  %>
+		<%= link_to(instrument) do %>
+		<div class="instrument-img-div">
+			<%= image_tag instrument.image.url, class: "responsive-img instrument-img" %>
+			<p class="instrument-name"><%= instrument.name %></p>
+		</div>
+		<% end  %>
+	<% end  %>
+</div>
+
+<h5 id="index-shootout-header" class="left-align index-section-header">Shootouts</h5><hr class="index-section-hr">
 
 <% @shootouts.each do |shootout|  %>
 	<%= render 'partials/shootout-list', :shootout => shootout %>
