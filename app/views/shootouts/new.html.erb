@@ -1,0 +1,28 @@
+<div class="row">
+<%= form_for(@shootout) do |f| %>
+  <div id="form-sm1" class="row">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">grade</i>
+      <%= f.select :instrument_id, @instruments.collect { |instrum| [ instrum.name, instrum.id ] }, prompt: 'Choose an Instrument', disabled: ""  %>
+    </div>
+
+    <%= f.fields_for :shootout_microphones, ShootoutMicrophone.new do |builder| %>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">mic</i>
+        <%= builder.select :microphone_id, @microphones.collect { |mic| [ mic.manufacturer.name + mic.model, mic.id ] }, prompt: 'Choose an Mic'  %>
+      </div>
+    <% end %>
+<!--       <div class="input-field col s6">
+        <i class="material-icons prefix">hearing</i>
+        <%#= builder.file_field :audio %>
+      </div> -->
+
+
+
+
+
+  <div class="input-field col s12">
+    <%= f.submit 'Submit', class: "btn right" %>
+  </div>
+<% end  %>
+</div>
