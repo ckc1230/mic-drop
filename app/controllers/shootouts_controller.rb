@@ -15,13 +15,18 @@ class ShootoutsController < ApplicationController
 	end
 
 	def create
-		Shootout.create(shootout_params)
-		redirect_to root_path
+		newMic = Shootout.create(shootout_params)
+		if newMic.save
+			redirect_to root_path
+		else
+	      flash[:error] = nice.errors.full_messages.join(". ")
+	      redirect_to new_shootout_path
+	  end
 	end
 
 	private
 
 	def shootout_params
-		params.require(:shootout).permit(:instrument_id, shootout_microphones_attributes: [:microphone_id])
+		params.require(:shootout).permit(:instrument_id, shootout_microphones_attributes: [:microphone_id, :audio])
 	end
 end

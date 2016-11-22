@@ -25,8 +25,12 @@
         <%= link_to "WEBSITE NAME", root_path, class: "brand-logo" %>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><button id="mute-button"><i class="material-icons" id="mute-icon">volume_off</i></button></li>
-          <li><%= link_to 'Log In' %></li>
-          <li><%= link_to 'Sign Up' %></li>
+          <% if current_user %>
+            <li><%= link_to 'Log Out', destroy_user_session_path, method: "delete" %></li>
+          <% else  %>
+            <li><%= link_to 'Log In', new_user_session_path %></li>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <% end  %>
         </ul>
       </div>
     </nav>
