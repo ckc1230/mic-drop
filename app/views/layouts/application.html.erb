@@ -26,6 +26,8 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><button id="mute-button"><i class="material-icons" id="mute-icon">volume_off</i></button></li>
           <% if current_user %>
+            <li><%= link_to current_user.username, new_shootout_path %></li>
+            <li><%= link_to "New Shootout", new_shootout_path %></li>
             <li><%= link_to 'Log Out', destroy_user_session_path, method: "delete" %></li>
           <% else  %>
             <li><%= link_to 'Log In', new_user_session_path %></li>
