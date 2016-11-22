@@ -68,6 +68,10 @@
 	vertical-align: middle;
 }
 
+.user-form-header {
+    font-family: 'Bungee Inline', cursive;
+}
+
 #mute-icon {
     font-size: 25px
 }
