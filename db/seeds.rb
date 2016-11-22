@@ -29,6 +29,18 @@ audix = Manufacturer.create(
 			name: "Audix", 
 			website: "http://www.audixusa.com/index-15.shtml",
 			logo: File.new(Rails.root.to_s + '/app/assets/images/manufacturer/audix.png'))
+schoeps = Manufacturer.create(
+			name: "Schoeps", 
+			website: "http://www.schoeps.de/en/products",
+			logo: File.new(Rails.root.to_s + '/app/assets/images/manufacturer/schoeps.jpg'))
+rode = Manufacturer.create(
+			name: "Rode", 
+			website: "http://en.rode.com/",
+			logo: File.new(Rails.root.to_s + '/app/assets/images/manufacturer/rode.jpg'))
+blue = Manufacturer.create(
+			name: "Blue", 
+			website: "http://www.bluemic.com/",
+			logo: File.new(Rails.root.to_s + '/app/assets/images/manufacturer/blue.jpg'))
 
 sm57 = Microphone.create(manufacturer: shure, model: "SM57", kind: "dynamic", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/sm57.jpg'))
 sm81 = Microphone.create(manufacturer: shure, model: "SM81", kind: "small-condenser", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/sm81.jpg'))
@@ -39,15 +51,21 @@ u87 = Microphone.create(manufacturer: neumann, model: "U87", kind: "large-conden
 km183 = Microphone.create(manufacturer: neumann, model: "KM183", kind: "small-condenser", phantom: true, polar_pattern: "omni", image: File.new(Rails.root.to_s + '/app/assets/images/mic/km183.jpg'))
 km184 = Microphone.create(manufacturer: neumann, model: "KM184", kind: "small-condenser", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/km184.jpg'))
 
-Microphone.create(manufacturer: sennheiser, model: "MD421 II", kind: "dynamic", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/md421.jpg'))
-Microphone.create(manufacturer: sennheiser, model: "MKH 416", kind: "shotgun", phantom: true, polar_pattern: "super-cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/mkh416.jpg'))
-Microphone.create(manufacturer: sennheiser, model: "e609", kind: "dynamic", phantom: false, polar_pattern: "super-cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/e609.jpg'))
+md421 = Microphone.create(manufacturer: sennheiser, model: "MD421 II", kind: "dynamic", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/md421.jpg'))
+mkh416 = Microphone.create(manufacturer: sennheiser, model: "MKH 416", kind: "shotgun", phantom: true, polar_pattern: "super-cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/mkh416.jpg'))
+e609 = Microphone.create(manufacturer: sennheiser, model: "e609", kind: "dynamic", phantom: false, polar_pattern: "super-cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/e609.jpg'))
 
 
-Microphone.create(manufacturer: audio_technica, model: "AT4033", kind: "large-condenser", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/at4033.jpg'))
-Microphone.create(manufacturer: royer, model: "R-121", kind: "ribbon", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/royer121.jpg'))
-Microphone.create(manufacturer: royer, model: "SF-2", kind: "ribbon", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/royer2.jpg'))
-Microphone.create(manufacturer: audix, model: "i5", kind: "dynamic", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/i5.jpg'))
+at4033 = Microphone.create(manufacturer: audio_technica, model: "AT4033", kind: "large-condenser", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/at4033.jpg'))
+r121 = Microphone.create(manufacturer: royer, model: "R-121", kind: "ribbon", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/royer121.jpg'))
+sf2 = Microphone.create(manufacturer: royer, model: "SF-2", kind: "ribbon", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/royer2.jpg'))
+i5 = Microphone.create(manufacturer: audix, model: "i5", kind: "dynamic", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/i5.jpg'))
+cmc6 = Microphone.create(manufacturer: schoeps, model: "CMC6-UG", kind: "condenser", phantom: true, polar_pattern: "bidirectional", image: File.new(Rails.root.to_s + '/app/assets/images/mic/CMC6-UG.jpg'))
+
+yeti = Microphone.create(manufacturer: blue, model: "Yeti", kind: "USB", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/yeti.jpg'))
+snowball = Microphone.create(manufacturer: blue, model: "Snowball", kind: "USB", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/snowball.jpg'))
+at2020 = Microphone.create(manufacturer: audio_technica, model: "AT2020", kind: "USB", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/at2020.jpg'))
+
 
 ac_guitar = Instrument.create(name:"Acoustic Guitar", image: File.new(Rails.root.to_s + '/app/assets/images/instrument/ac_guitar.jpg'))
 vocals = Instrument.create(name:"Vocals", image: File.new(Rails.root.to_s + '/app/assets/images/instrument/vocals.jpg'))
@@ -56,29 +74,32 @@ e_guitar = Instrument.create(name:"Electric Guitar", image: File.new(Rails.root.
 e_bass = Instrument.create(name:"Electric Bass", image: File.new(Rails.root.to_s + '/app/assets/images/instrument/e_bass.jpg'))
 cello = Instrument.create(name:"Cello", image: File.new(Rails.root.to_s + '/app/assets/images/instrument/cello.jpg'))
 voiceover = Instrument.create(name:"Voiceover", image: File.new(Rails.root.to_s + '/app/assets/images/instrument/voiceover.jpg'))
+drums = Instrument.create(name:"Drums", image: File.new(Rails.root.to_s + '/app/assets/images/instrument/drums.jpg'))
 
+# User.create(username: "chris", email: "chris@chan.com" password:"asdfgh")
 
-first_shootout = Shootout.create(instrument_id: ac_guitar.id)
-second_shootout = Shootout.create(instrument_id: vocals.id)
-third_shootout = Shootout.create(instrument_id: piano.id)
+first_shootout = Shootout.create(instrument_id: voiceover.id)
+second_shootout = Shootout.create(instrument_id: e_guitar.id)
+third_shootout = Shootout.create(instrument_id: drums.id)
 fourth_shootout = Shootout.create(instrument_id: e_guitar.id)
 fifth_shootout = Shootout.create(instrument_id: e_bass.id)
 sixth_shootout = Shootout.create(instrument_id: cello.id)
-seventh_shootout = Shootout.create(instrument_id: voiceover.id)
+seventh_shootout = Shootout.create(instrument_id: vocals.id)
 
-ShootoutMicrophone.create(shootout_id: first_shootout.id, microphone_id: sm57.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/akbar.mp3'))
-ShootoutMicrophone.create(shootout_id: first_shootout.id, microphone_id: sm81.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/han.mp3'))
-ShootoutMicrophone.create(shootout_id: second_shootout.id, microphone_id: sm7.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/luke.mp3'))
-ShootoutMicrophone.create(shootout_id: second_shootout.id, microphone_id: c414.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/chewie.mp3'))
-ShootoutMicrophone.create(shootout_id: second_shootout.id, microphone_id: u87.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/luke.mp3'))
+ShootoutMicrophone.create(shootout_id: first_shootout.id, microphone_id: sm7.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/vox-5-2/SM7B.mp3'))
+ShootoutMicrophone.create(shootout_id: first_shootout.id, microphone_id: u87.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/vox-5-2/U87.mp3'))
+ShootoutMicrophone.create(shootout_id: second_shootout.id, microphone_id: sm57.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/e-gtr-1-2/SM57.mp3'))
+ShootoutMicrophone.create(shootout_id: second_shootout.id, microphone_id: r121.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/e-gtr-1-2/R121.mp3'))
 
-ShootoutMicrophone.create(shootout_id: third_shootout.id, microphone_id: sm7.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/luke.mp3'))
-ShootoutMicrophone.create(shootout_id: third_shootout.id, microphone_id: c414.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/chewie.mp3'))
-ShootoutMicrophone.create(shootout_id: third_shootout.id, microphone_id: u87.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/luke.mp3'))
+ShootoutMicrophone.create(shootout_id: third_shootout.id, microphone_id: u87.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/drums-1-2/U87.mp3'))
+ShootoutMicrophone.create(shootout_id: third_shootout.id, microphone_id: cmc6.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/drums-1-2/CMC6-UG.mp3'))
 
-ShootoutMicrophone.create(shootout_id: fourth_shootout.id, microphone_id: sm57.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/akbar.mp3'))
-ShootoutMicrophone.create(shootout_id: fourth_shootout.id, microphone_id: sm81.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/han.mp3'))
-ShootoutMicrophone.create(shootout_id: fourth_shootout.id, microphone_id: sm7.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/luke.mp3'))
+ShootoutMicrophone.create(shootout_id: fourth_shootout.id, microphone_id: i5.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/e-gtr-2-5/audix_i5.mp3'))
+ShootoutMicrophone.create(shootout_id: fourth_shootout.id, microphone_id: md421.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/e-gtr-2-5/MD421.mp3'))
+ShootoutMicrophone.create(shootout_id: fourth_shootout.id, microphone_id: r121.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/e-gtr-2-5/royer121.mp3'))
+ShootoutMicrophone.create(shootout_id: fourth_shootout.id, microphone_id: e609.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/e-gtr-2-5/e609.mp3'))
+ShootoutMicrophone.create(shootout_id: fourth_shootout.id, microphone_id: sm7.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/e-gtr-2-5/SM7.mp3'))
+
 ShootoutMicrophone.create(shootout_id: fifth_shootout.id, microphone_id: c414.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/chewie.mp3'))
 ShootoutMicrophone.create(shootout_id: fifth_shootout.id, microphone_id: u87.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/luke.mp3'))
 
