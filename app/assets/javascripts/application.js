@@ -17,6 +17,7 @@
 
 $(document).on('turbolinks:load', function() {
   console.log( "ready!" );
+  $('select').material_select();
   $('#mute-button').on('click', muteVideo);
   $(".collection-item").click(playSound)
 });
