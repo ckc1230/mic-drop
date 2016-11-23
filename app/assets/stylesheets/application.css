@@ -107,6 +107,8 @@
 .shootout-list {
 	margin: 0 0 0 0;
     border: none;
+    padding: 10px !important;
+    background: rgba(255,255,255,0.5);
 }
 
 .shootout-item-length {
@@ -147,6 +149,15 @@
 
 #index-shootout-header {
     margin-top: 30px;
+}
+
+.collection-item-row {
+    margin: 0;
+}
+
+.collection-item {
+    margin-left: 20px !important;
+    width: 80%
 }
 
 .manu-img-div {
@@ -209,6 +220,13 @@
 .mic-info-btn {
     vertical-align: middle;
     line-height: 40px;
+    text-align: center;
+    width: 15% !important;
+}
+
+.no-shootout-msg {
+    margin-top: 50px;
+    font-family: 'Bungee Inline', cursive;
 }
 
 .current-mic, .current-uploader {
@@ -227,6 +245,10 @@
     font-weight: bold;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     font-family: 'Bungee Inline', cursive;
+}
+
+.shootout-item-title {
+    margin-left: 20px;
 }
 
 .mic-table-header, .mic-table-data {

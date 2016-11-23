@@ -11,9 +11,9 @@
         </div>
 		<div class="row">
             <div class="col m3">
-                <div class="current-mic row">
-                    <%= shootout.shootout_microphones.first.microphone.manufacturer.name %>
-                    <%= shootout.shootout_microphones.first.microphone.model %>
+                <div class="current-mic row center">
+                    <span class="current-mic-manu"><%= shootout.shootout_microphones.first.microphone.manufacturer.name %></span>
+                    <span class="current-mic-model"><%= shootout.shootout_microphones.first.microphone.model %></span>
                 </div>
                 <div class="row shootout-mic-image">
                     <%= image_tag shootout.shootout_microphones.first.microphone.image.url, class: "responsive-img" %>
@@ -30,16 +30,17 @@
                     <div class="collection shootout-list">
         				<% shootout.shootout_microphones.each do |sm| %>
         				<% mic = sm.microphone %>         
-                            <a href="#" id="<%= sm.audio.url %>" class="collection-item col m10">
-                                <div class="shootout-item" >
-                                    <div class="shootout-item-title">
-                                        <span><%= mic.manufacturer.name %> <%= mic.model %></span>
-        <!--                                <span class="shootout-item-length">11000</span> -->
+                            <div class="row collection-item-row">
+                                <a href="#" id="<%= sm.audio.url %>" class="collection-item col waves-effect waves-purple">
+                                    <div class="shootout-item" >
+                                        <div class="shootout-item-title">
+                                            <span><%= mic.manufacturer.name %> <%= mic.model %></span>
+                                        </div>
                                     </div>
+                                </a>
+                                <div class="col mic-info-btn">
+            						<%= link_to '+', microphone_path(mic), class: "btn" %>
                                 </div>
-                            </a>
-                            <div class="col m2 mic-info-btn">
-        						<%= link_to 'Info', microphone_path(mic), class: "btn" %>
                             </div>
         	            <% end  %>
                     </div>
