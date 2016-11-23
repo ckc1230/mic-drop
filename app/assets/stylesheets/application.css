@@ -197,10 +197,14 @@
 	width: 100%;
 }
 
-.current-mic, .current-instrument {
-	background: white;
-	color: lightblue;
-	width: 30%;
+.current-mic, .current-uploader {
+	background: rgba(255,255,255,0.5);
+	color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border: 3px solid black;
+    font-family: 'Bungee Inline', cursive;
 }
 
 .mic-table-header, .mic-table-data {
