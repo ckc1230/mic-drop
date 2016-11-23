@@ -19,7 +19,7 @@ class ShootoutsController < ApplicationController
 		if newMic.save
 			redirect_to root_path
 		else
-	      flash[:error] = nice.errors.full_messages.join(". ")
+	      flash[:error] = newMic.errors.full_messages.join(". ")
 	      redirect_to new_shootout_path
 	  end
 	end
@@ -27,6 +27,6 @@ class ShootoutsController < ApplicationController
 	private
 
 	def shootout_params
-		params.require(:shootout).permit(:instrument_id, shootout_microphones_attributes: [:microphone_id, :audio])
+		params.require(:shootout).permit(:user_id, :instrument_id, shootout_microphones_attributes: [:microphone_id, :audio])
 	end
 end
