@@ -65,6 +65,8 @@ cmc6 = Microphone.create(manufacturer: schoeps, model: "CMC6-UG", kind: "condens
 yeti = Microphone.create(manufacturer: blue, model: "Yeti", kind: "USB", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/yeti.jpg'))
 snowball = Microphone.create(manufacturer: blue, model: "Snowball", kind: "USB", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/snowball.jpg'))
 at2020 = Microphone.create(manufacturer: audio_technica, model: "AT2020", kind: "USB", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/at2020.jpg'))
+nt5 = Microphone.create(manufacturer: rode, model: "NT5", kind: "condenser", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/nt5.jpg'))
+k2 = Microphone.create(manufacturer: rode, model: "K2", kind: "condenser", phantom: true, polar_pattern: "multi-pattern", image: File.new(Rails.root.to_s + '/app/assets/images/mic/k2.jpg'))
 
 
 ac_guitar = Instrument.create(name:"Acoustic Guitar", image: File.new(Rails.root.to_s + '/app/assets/images/instrument/ac_guitar.jpg'))
@@ -76,15 +78,16 @@ cello = Instrument.create(name:"Cello", image: File.new(Rails.root.to_s + '/app/
 voiceover = Instrument.create(name:"Voiceover", image: File.new(Rails.root.to_s + '/app/assets/images/instrument/voiceover.jpg'))
 drums = Instrument.create(name:"Drums", image: File.new(Rails.root.to_s + '/app/assets/images/instrument/drums.jpg'))
 
-# User.create(username: "chris", email: "chris@chan.com" password:"asdfgh")
+chris = User.create(username: "chris", email: "chris@chan.com", password:"asdfgh")
+toby = User.create(username: "toby", email: "toby@zitsman.com", password:"asdfgh")
 
-first_shootout = Shootout.create(instrument_id: voiceover.id)
-second_shootout = Shootout.create(instrument_id: e_guitar.id)
-third_shootout = Shootout.create(instrument_id: drums.id)
-fourth_shootout = Shootout.create(instrument_id: e_guitar.id)
-fifth_shootout = Shootout.create(instrument_id: e_bass.id)
-sixth_shootout = Shootout.create(instrument_id: cello.id)
-seventh_shootout = Shootout.create(instrument_id: vocals.id)
+first_shootout = Shootout.create(user_id: chris.id, instrument_id: voiceover.id)
+second_shootout = Shootout.create(user_id: chris.id, instrument_id: e_guitar.id)
+third_shootout = Shootout.create(user_id: chris.id, instrument_id: drums.id)
+fourth_shootout = Shootout.create(user_id: chris.id, instrument_id: e_guitar.id)
+fifth_shootout = Shootout.create(user_id: toby.id, instrument_id: e_bass.id)
+sixth_shootout = Shootout.create(user_id: toby.id, instrument_id: cello.id)
+seventh_shootout = Shootout.create(user_id: toby.id, instrument_id: vocals.id)
 
 ShootoutMicrophone.create(shootout_id: first_shootout.id, microphone_id: sm7.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/vox-5-2/SM7B.mp3'))
 ShootoutMicrophone.create(shootout_id: first_shootout.id, microphone_id: u87.id, audio: File.new(Rails.root.to_s + '/app/assets/audio/vox-5-2/U87.mp3'))
