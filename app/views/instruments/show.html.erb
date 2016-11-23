@@ -2,6 +2,13 @@
 
 <h5 id="index-shootout-header" class="left-align index-section-header">Shootouts</h5><hr class="index-section-hr">
 
-<% @shootouts.each do |shootout|  %>
-	<%= render 'partials/shootout-list', :shootout => shootout %>
+<% if @shootouts.count === 0 %>
+	<div class="container center no-shootout-msg">
+		<div>Sorry, we do not have any microphone shootouts available for this instrument.</div>
+		<div>Please be the first to post one <%= link_to 'here', new_shootout_path %>!</div>
+	</div>
+<% else  %>
+	<% @shootouts.each do |shootout|  %>
+		<%= render 'partials/shootout-list', :shootout => shootout %>
+	<% end  %>
 <% end  %>
