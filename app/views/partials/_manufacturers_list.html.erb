@@ -1,0 +1,12 @@
+<div class="row center index-section-row manu-row">
+	<h5 class="left-align index-section-header">Manufacturers</h5><hr class="index-section-hr">
+	<div class="owl-carousel col">
+		<% @manufacturers.each do |manufacturer|  %>
+			<%= link_to(manufacturer) do %>
+			<div class="manu-img-div item">
+				<%= image_tag manufacturer.logo.url, class: "responsive-img manu-img" %>
+			</div>
+			<% end  %>
+		<% end  %>
+	</div>
+</div>

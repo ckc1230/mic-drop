@@ -1,0 +1,51 @@
+<div class="row">
+<%= form_for(@shootout) do |f| %>
+  <div id="form-sm1" class="row">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">grade</i>
+      <%= f.select :instrument, @instruments.collect { |instrum| [ instrum.name, instrum ] }, prompt: 'Choose an Instrument', disabled: ""  %>
+      <%= explode %>
+    </div>
+
+    <%= f.fields_for(ShootoutMicrophone.new) do |builder| %>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">mic</i>
+        <%= builder.select :microphone, Microphone.all.collect { |mic| [ mic.manufacturer.name + mic.model, mic ] }, prompt: 'Choose an Mic'  %>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">hearing</i>
+        <%= builder.file_field :audio %>
+      </div>
+    <% end %>
+  <div class="input-field col s12">
+    <%= f.submit 'Submit', class: "btn right" %>
+  </div>
+<% end  %>
+</div>
+
+
+  <!-- <form class="col s12"> -->
+      <!-- <div class="input-field col s6">
+        <i class="material-icons prefix">hearing</i>
+        <input id="icon_telephone" type="tel" class="validate">
+        <label for="icon_telephone">Audio</label>
+      </div>
+    </div>
+    <div id="form-sm2" class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">mic</i>
+        <select>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+        <label>Microphone</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">hearing</i>
+        <input id="icon_telephone" type="tel" class="validate">
+        <label for="icon_telephone">Audio</label>
+      </div>
+    </div> -->
+  <!-- </form> -->
