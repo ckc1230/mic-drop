@@ -14,9 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require owl.carousel
+
 
 $(document).on('turbolinks:load', function() {
   console.log( "ready!" );
+  $(".owl-carousel").owlCarousel({
+    paginationSpeed : 2000,
+    rtl: true,
+    autoPlay:3000
+  });
   $('select').material_select();
   $('#mute-button').on('click', muteVideo);
   $(".collection-item").click(playSound)
