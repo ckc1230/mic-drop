@@ -135,13 +135,16 @@
 }
 
 .shootout-container {
-/*	background: beige;
-*/	padding: 30px 30px 0 30px;
+	padding: 10px 30px 0 30px;
 	margin-top: 30px;
 	color: white;
 	border: 5px solid black;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+}
+
+.shootout-body {
+    margin-bottom: 0;
 }
 
 .index-section-row {
@@ -155,12 +158,12 @@
 
 .index-section-hr {
     text-align: right;
-    margin: 0 0 20px auto;
+    margin: 0 0 0 auto;
     width: 80%;
 }
 
 #index-shootout-header {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .collection-item-row {
@@ -179,11 +182,11 @@
     display: inline-block;
     margin: 0 20px 0 20px;
     background: white;
-    padding: 5px;
+    padding: 3px;
 }
 
 .manu-row {
-    margin: 0 auto;
+    margin: 30px auto 0 auto;
 }
 
 .manu-img {
@@ -251,6 +254,19 @@
     font-family: 'Bungee Inline', cursive;
 }
 
+.current-uploader {
+    margin-top: 15px;
+}
+
+.mic-show-container {
+    margin-bottom: 40px;
+    font-family: 'Bungee Inline', cursive;
+}
+
+.current-shootout-header {
+    margin-bottom: 5px !important;
+}
+
 .current-instrument {
     color: white;
     font-size: 40px;
@@ -263,9 +279,28 @@
     margin-left: 20px;
 }
 
+.manu-mic-display {
+    margin-top: 20px;
+    height: 150px;
+    border-radius: 10px;
+    color: black;      /* unvisited link */
+}
+
+.manu-mic-display:hover {
+    background: #FDF1FF;
+}
+
+.manual-header-margin {
+    line-height: 30px;
+}
+
 .mic-table-header, .mic-table-data {
 	padding: 2px;
 	width: 100px;
+}
+
+.mic-info-spec {
+    padding-left: 50px !important;
 }
 
 .mic-info-row {
