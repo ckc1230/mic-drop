@@ -12,15 +12,26 @@
  *
  *= require_tree .
  *= require_self
+ *= require owl.carousel
+ *= require owl.theme
  */
 
+.signup-container {
+    background: url("http://dbar-productions.com/dbarwpblog/wp-content/uploads/2012/06/01.jpg");
+    height: 100vh;
+}
+
+.signup-form {
+    background: white;
+    padding: 30px;
+    margin-top: 30px;
+}
 .main-nav {
     height: 65px;
     line-height: 65px;
 /*    background: transparent;
 */    background: black;
     box-shadow: none;
-    margin-bottom: 30px;
 }
 
 .nav-wrapper {
