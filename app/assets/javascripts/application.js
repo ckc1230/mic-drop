@@ -31,8 +31,12 @@ $(document).on('turbolinks:load', function() {
 
 function playSound(e) {
   e.preventDefault();
-  newSource = (this.id);
-  $(this).closest('.shootout-container').find('.audio-source').attr("src", newSource)
+  currentMicAudio = (this.id);
+  currentMic = $(this).closest('.collection-item-row').find('.shootout-item-name').html()
+  currentMicImg = $(this).closest('.collection-item-row').find('.collection-item-img-url').html()
+  $(this).closest('.shootout-container').find('.audio-source').attr("src", currentMicAudio)
+  $(this).closest('.shootout-container').find('.current-mic-manu').html(currentMic);
+  $(this).closest('.shootout-container').find('.current-mic-img').attr("src", currentMicImg)
   $('audio').each(function(){
     $(this)[0].pause();
   }); 
