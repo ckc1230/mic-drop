@@ -3,6 +3,8 @@
 <h5 class="left-align index-section-header">Microphones by <%= @manufacturer.name %></h5><hr class="index-section-hr">
 <div class="container">
 
+<p class="center">More information regarding <%= @manufacturer.name %>'s microphones can be found <%= link_to 'here', @manufacturer.website %>.</p>
+
 	<div class="row">
 		<% @manufacturer.microphones.each do |microphone|  %>
 			<%= link_to microphone_path(microphone) do %>

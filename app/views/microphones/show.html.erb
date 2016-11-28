@@ -29,6 +29,17 @@
 
 <h5 id="index-shootout-header" class="left-align index-section-header">Shootouts</h5><hr class="index-section-hr">
 
-<% @microphone.shootouts.each do |shootout|  %>
-	<%= render 'partials/shootout-list', :shootout => shootout %>
+<% if @microphone.shootouts.count === 0 %>
+	<div class="container center no-shootout-msg">
+		<div>Sorry, we do not have any shootouts available for this microphone.</div>
+		<% if current_user  %>
+			<div>Please be the first to post one <%= link_to 'here', new_shootout_path %>!</div>
+		<% else  %>
+			<div>Please log in <%= link_to 'here', new_user_session_path %> to post our first!</div>
+		<% end  %>
+	</div>
+<% else  %>
+	<% @microphone.shootouts.each do |shootout|  %>
+		<%= render 'partials/shootout-list', :shootout => shootout %>
+	<% end  %>
 <% end  %>

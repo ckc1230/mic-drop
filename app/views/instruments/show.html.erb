@@ -6,7 +6,11 @@
 <% if @shootouts.count === 0 %>
 	<div class="container center no-shootout-msg">
 		<div>Sorry, we do not have any microphone shootouts available for this instrument.</div>
-		<div>Please be the first to post one <%= link_to 'here', new_shootout_path %>!</div>
+		<% if current_user  %>
+			<div>Please be the first to post one <%= link_to 'here', new_shootout_path %>!</div>
+		<% else  %>
+			<div>Please log in <%= link_to 'here', new_user_session_path %> to post our first!</div>
+		<% end  %>
 	</div>
 <% else  %>
 	<% @shootouts.each do |shootout|  %>
