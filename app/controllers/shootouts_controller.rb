@@ -1,6 +1,6 @@
 class ShootoutsController < ApplicationController
 	def index
-		@shootouts = Shootout.all
+		@shootouts = Shootout.all.order('created_at DESC')
 		@manufacturers = Manufacturer.order('name ASC')
 		@instruments = Instrument.order('name ASC')
 	end

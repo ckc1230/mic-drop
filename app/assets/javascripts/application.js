@@ -28,6 +28,7 @@ $(document).on('turbolinks:load', function() {
     rtl: true,
     autoPlay: 4000
   });
+  $('ul.tabs').tabs();
   $('select').material_select();
   $("select[required]").css({display: "inline", height: 0, padding: 0, width: 0, position: 'absolute', opacity: '0'});
   $('#mute-button').on('click', muteVideo);

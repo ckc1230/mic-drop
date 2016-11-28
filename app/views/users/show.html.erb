@@ -1,5 +1,5 @@
 <div class="container user-show-container">
-	<div class="row">
+	<div class="row user-show-info">
 		<div class="col m4">
 			<% if current_user && @user === current_user%>
 				<h5>Hi <%= @user.username %></h5>
@@ -12,14 +12,14 @@
 				<% end  %>
 			<% else %>
 				<h5><%= @user.username %></h5>
-				<p>Joined on: <%= @user.created_at.strftime("%b. %d, %Y") %></p>
-				<p>Shootouts posted: <%= @user.shootouts.count %></p>
+				<p>Joined on: <%= @user.created_at.strftime("%b. %d, %Y") %><br>
+				Shootouts posted: <%= @user.shootouts.count %></p>
 			<% end  %>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col m6">
-			<h5>Shootouts by Instruments</h5>	
+			<h5>Instruments:</h5>	
 			<ul>
 				<% @instruments.each do |instrument| %>
 					<li><%= instrument.name %></li>
@@ -28,7 +28,7 @@
 		</div>
 		<div class="col m6">
 			<div class="row">
-				<h5>Shootouts by Microphone</h5>	
+				<h5>Microphones:</h5>	
 			</div>
 			<div class="row user-microphone-list">
 				<ul class="user-microphone-list-ul">
@@ -41,6 +41,27 @@
 	</div>
 </div>
 
-<% @user.shootouts.each do |shootout|  %>
-	<%= render 'partials/shootout-list', :shootout => shootout %>
+<% if current_user && @user === current_user %>
+    <div class="row">
+        <ul class="tabs">
+            <li class="tab col s3 offset-s2"><a class="active" href="#test1">Shootouts By You</a></li>
+        	<li class="tab col s3 offset-s1"><a href="#test2">Favorite Shootouts</a></li>
+        </ul>
+    </div>
+
+    <div id="test1" class="col s12">
+    	<% @user.shootouts.each do |shootout|  %>
+			<%= render 'partials/shootout_list', :shootout => shootout %>
+		<% end  %>
+    </div>
+    <div id="test2" class="col s12">
+    	Test 2
+	</div>
+
+<% else  %>
+	<% @user.shootouts.each do |shootout|  %>
+		<%= render 'partials/shootout_list', :shootout => shootout %>
+	<% end  %>
 <% end  %>
+
+
