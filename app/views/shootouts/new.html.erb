@@ -10,7 +10,7 @@
 		  <div id="form-sm1" class="row">
 		    <div class="input-field col s11 shootout-form-instrument-field">
 		      <i class="material-icons prefix">grade</i>
-		      <%= f.select :instrument_id, @instruments.collect { |instrum| [ instrum.name, instrum.id ] }, { prompt: 'Choose an Instrument', class: "validate" }, { required: true, "data-msg-required": "Please enter something here!" } %>
+		      <%= f.select :instrument_id, @instruments.collect { |instrum| [ instrum.name, instrum.id, {'data-icon' => instrum.image(:thumb), class: "right circle" }  ] }, { prompt: 'Choose an Instrument' }, { required: true } %>
 		    </div>
 			<div class="row new-shootout-field" id="new-shootout-1">
 			    <%= f.fields_for :shootout_microphones, ShootoutMicrophone.new, html: { multipart: true } do |builder| %>
@@ -75,16 +75,16 @@
 			      </div>
 			      <div class="input-field shootout-input-field col s4">
 			        <i class="material-icons prefix">hearing</i>
-			        <%= builder.file_field :audio %>
+			        <%= builder.file_field :audio, {required: true} %>
 			      </div>
-			      <div class="col s1">
-			      	<button class="remove-shootout-btn btn">X</button>
+			      <div class="col s1 remove-shootout-div">
+			      	<button class="remove-shootout-btn btn red">X</button>
 			      </div>
 			    <% end %>
 			</div>
 
 		 <div class="row">
-		  	<button class="btn" id="add-shootout-mic-btn">Add Another Microphone</button>
+		  	<button class="btn black" id="add-shootout-mic-btn">Add Another Microphone</button>
 		    <%= f.submit 'Submit', class: "btn right", id: "submit-shootout-btn" %>
 		  </div>
 		<% end  %>
