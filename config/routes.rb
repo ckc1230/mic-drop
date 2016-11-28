@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   root "shootouts#index"
   get "/pages/about", "page#show"
-  resources :microphones, :shootouts, :manufacturers, :instruments, :users
+  resources :microphones, except: [:edit, :update] 
+  resources :shootouts, except: [:edit, :update]
+  resources :manufacturers, :instruments, :users
 
 end
