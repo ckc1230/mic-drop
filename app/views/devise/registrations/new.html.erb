@@ -1,23 +1,24 @@
+<div class="signup-container">
 <div class="container">
   <div class="row">
-    <div class="col m5">
+    <div class="col m5 signup-form">
       <h2 class="user-form-header">Sign up</h2>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
 
         <div class="field">
-          <%= f.label :username %><br />
+          <%= f.label :username, class: "field-label" %><br />
           <%= f.text_field :username, autofocus: true %>
         </div>
 
         <div class="field">
-          <%= f.label :email %><br />
+          <%= f.label :email, class: "field-label" %><br />
           <%= f.email_field :email, autofocus: true %>
         </div>
 
         <div class="field">
-          <%= f.label :password %>
+          <%= f.label :password, class: "field-label" %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
@@ -25,7 +26,7 @@
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation %><br />
+          <%= f.label :password_confirmation, class: "field-label" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
 
@@ -35,17 +36,17 @@
       <% end %>
     </div>
 
-    <div class="col m6 offset-m1">
+    <div class="col m6 offset-m1 signup-disclaimer">
+      <h4 class="field-label">Disclaimer</h4>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Already have an account? Sign in <%= link_to 'here', new_user_session_path %>.</p>
       
     </div>
-
-
-
   </div>
+</div>
 </div>

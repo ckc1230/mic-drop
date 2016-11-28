@@ -14,18 +14,38 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require owl.carousel
 
 $(document).on('turbolinks:load', function() {
   console.log( "ready!" );
+  $(".dropdown-button").dropdown({
+      hover: true, // Activate on hover
+      belowOrigin: true, // Displays dropdown below the button
+    });
+
+  $(".owl-carousel").owlCarousel({
+    paginationSpeed : 2000,
+    rtl: true,
+    autoPlay: 4000
+  });
   $('select').material_select();
   $('#mute-button').on('click', muteVideo);
-  $(".collection-item").click(playSound)
+  $(".collection-item").click(playSound);
+  $(".remove-shootout-btn").click(removeField);
+  $("#add-shootout-mic-btn").click(addField);
+  $('#new-shootout-3 *').prop('disabled',true);
+  $('#new-shootout-4 *').prop('disabled',true);
+  $('#new-shootout-5 *').prop('disabled',true);
 });
 
 function playSound(e) {
   e.preventDefault();
-  newSource = (this.id);
-  $(this).closest('.shootout-container').find('.audio-source').attr("src", newSource)
+  currentMicAudio = (this.id);
+  currentMic = $(this).closest('.collection-item-row').find('.shootout-item-name').html()
+  currentMicImg = $(this).closest('.collection-item-row').find('.collection-item-img-url').html()
+  $(this).closest('.shootout-container').find('.audio-source').attr("src", currentMicAudio)
+  $(this).closest('.shootout-container').find('.current-mic-manu').html(currentMic);
+  $(this).closest('.shootout-container').find('.current-mic-img').attr("src", currentMicImg)
   $('audio').each(function(){
     $(this)[0].pause();
   }); 
@@ -36,4 +56,22 @@ function playSound(e) {
 function muteVideo() {
   $('#intro-video').prop('muted', !$('#intro-video').prop('muted'));
   $('#intro-video').prop('muted')? $('#mute-icon').html('volume_off'): $('#mute-icon').html('volume_up');
+}
+
+function addField(e) {
+  e.preventDefault();
+  $('#form-sm1').find('.new-shootout-field:hidden:first *').prop('disabled',false);
+  $('#form-sm1').find('.new-shootout-field:hidden:first').toggle()
+  if ($('#form-sm1').find('.new-shootout-field:visible:last').attr('id') == 'new-shootout-5') {
+    $("#add-shootout-mic-btn").toggle();
+  }
+}
+
+function removeField(e) {
+  e.preventDefault();
+  $('#form-sm1').find('.new-shootout-field:visible:last *').prop('disabled',true);
+  if ($('#form-sm1').find('.new-shootout-field:visible:last').attr('id') == 'new-shootout-5') {
+    $("#add-shootout-mic-btn").toggle();
+  }
+  $('#form-sm1').find('.new-shootout-field:visible:last').hide()
 }

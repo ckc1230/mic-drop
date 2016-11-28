@@ -1,26 +1,36 @@
+<%= render 'partials/manufacturers_list', :manufacturers => @manufacturers %>
+
+<h5 class="left-align index-section-header">Microphones by <%= @manufacturer.name %></h5><hr class="index-section-hr">
 <div class="container">
-<% @manufacturer.microphones.each do |microphone|  %>
+
+<p class="center">More information regarding <%= @manufacturer.name %>'s microphones can be found <%= link_to 'here', @manufacturer.website %>.</p>
+
 	<div class="row">
-		<div class="col m2 offset-m2">
-			<%= image_tag microphone.image.url, class: "responsive-img" %>
-		</div>
-		<div class="col m4">
-			<h5><%= microphone.manufacturer.name %> <%= microphone.model %></h5>
-			<table>
-			  <tr>
-			    <th class="mic-table-header">Type:</th>
-			    <td class="mic-table-data"><%= microphone.kind %></td>
-			  </tr>
-			  <tr>
-			    <th class="mic-table-header">Phantom:</th>
-			    <td class="mic-table-data"><%= microphone.phantom %></td>
-			  </tr>
-			  <tr>
-			    <th class="mic-table-header">Polar Pattern:</th>
-			    <td class="mic-table-data"><%= microphone.polar_pattern %></td>
-			  </tr>
-			</table>
-		</div>
+		<% @manufacturer.microphones.each do |microphone|  %>
+			<%= link_to microphone_path(microphone) do %>
+			<div class="col m6 s6 manu-mic-display valign-wrapper">
+				<div class="col m4 s4 valign">
+					<%= image_tag microphone.image.url, class: "responsive-img" %>
+				</div>
+				<div class="col m7 s7 offset-s1 offset-m1">
+					<h5><%= microphone.model %></h5>
+					<table>
+					  <tr>
+					    <th class="mic-table-header">Type:</th>
+					    <td class="mic-table-data"><%= microphone.kind %></td>
+					  </tr>
+					  <tr>
+					    <th class="mic-table-header">Phantom:</th>
+					    <td class="mic-table-data"><% if microphone.phantom %>Yes<% else %>No<% end %></td>
+					  </tr>
+					  <tr>
+					    <th class="mic-table-header">Polar Pattern:</th>
+					    <td class="mic-table-data"><%= microphone.polar_pattern %></td>
+					  </tr>
+					</table>
+				</div>
+			</div>
+			<% end  %>
+		<% end  %>
 	</div>
-<% end  %>
 </div>

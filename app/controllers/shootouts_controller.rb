@@ -1,8 +1,8 @@
 class ShootoutsController < ApplicationController
 	def index
 		@shootouts = Shootout.all
-		@manufacturers = Manufacturer.all
-		@instruments = Instrument.all
+		@manufacturers = Manufacturer.order('name ASC')
+		@instruments = Instrument.order('name ASC')
 	end
 
 	def show
@@ -11,7 +11,7 @@ class ShootoutsController < ApplicationController
 	def new
 		@shootout = Shootout.new
 		@instruments = Instrument.all
-		@microphones = Microphone.all
+		@microphones = Microphone.order('model ASC')
 	end
 
 	def create

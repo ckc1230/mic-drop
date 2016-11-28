@@ -1,29 +1,45 @@
-<div class="row mic-info-row">
-	<div class="mic-info-image col m3">
-		<%= image_tag @microphone.image.url, class: "responsive-img" %>
-	</div>
-	<div class="mic-info-spec col m9">
-		<h5><%= @microphone.manufacturer.name %> <%= @microphone.model %></h5>
-		<table>
-		  <tr>
-		    <th class="mic-table-header">Type:</th>
-		    <td class="mic-table-data"><%= @microphone.kind %></td>
-		  </tr>
-		  <tr>
-		    <th class="mic-table-header">Phantom:</th>
-		    <td class="mic-table-data"><%= @microphone.phantom %></td>
-		  </tr>
-		  <tr>
-		    <th class="mic-table-header">Polar Pattern:</th>
-		    <td class="mic-table-data"><%= @microphone.polar_pattern %></td>
-		  </tr>
-  		  <tr>
-		    <th class="mic-table-header">Spec Sheet (<%= @microphone.manufacturer.name %>):</th>
-		    <td class="mic-table-data"><%= @microphone.spec_sheet %></td>
-		  </tr>
-		</table>
+<div class="container mic-show-container">
+	<div class="row mic-info-row">
+		<div class="mic-info-image col m3">
+			<%= image_tag @microphone.image.url, class: "responsive-img shootout-mic-image" %>
+		</div>
+		<div class="mic-info-spec col m9">
+			<h5><%= @microphone.manufacturer.name %> <%= @microphone.model %></h5>
+			<table>
+			  <tr>
+			    <th class="mic-table-header">Type:</th>
+			    <td class="mic-table-data"><%= @microphone.kind %></td>
+			  </tr>
+			  <tr>
+			    <th class="mic-table-header">Phantom:</th>
+			    <td class="mic-table-data"><% if @microphone.phantom %>Yes<% else %>No<% end %></td>
+			  </tr>
+			  <tr>
+			    <th class="mic-table-header">Polar Pattern:</th>
+			    <td class="mic-table-data"><%= @microphone.polar_pattern %></td>
+			  </tr>
+	  		  <tr>
+			    <th class="mic-table-header">Spec Sheet (<%= @microphone.manufacturer.name %>):</th>
+			    <td class="mic-table-data"><%= @microphone.spec_sheet %></td>
+			  </tr>
+			</table>
+		</div>
 	</div>
 </div>
-<% @microphone.shootouts.each do |shootout|  %>
-	<%= render 'partials/shootout-list', :shootout => shootout %>
+
+<h5 id="index-shootout-header" class="left-align index-section-header">Shootouts</h5><hr class="index-section-hr">
+
+<% if @microphone.shootouts.count === 0 %>
+	<div class="container center no-shootout-msg">
+		<div>Sorry, we do not have any shootouts available for this microphone.</div>
+		<% if current_user  %>
+			<div>Please be the first to post one <%= link_to 'here', new_shootout_path %>!</div>
+		<% else  %>
+			<div>Please log in <%= link_to 'here', new_user_session_path %> to post our first!</div>
+		<% end  %>
+	</div>
+<% else  %>
+	<% @microphone.shootouts.each do |shootout|  %>
+		<%= render 'partials/shootout-list', :shootout => shootout %>
+	<% end  %>
 <% end  %>

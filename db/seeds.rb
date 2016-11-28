@@ -41,6 +41,10 @@ blue = Manufacturer.create(
 			name: "Blue", 
 			website: "http://www.bluemic.com/",
 			logo: File.new(Rails.root.to_s + '/app/assets/images/manufacturer/blue.jpg'))
+ev = Manufacturer.create(
+			name: "Electro Voice", 
+			website: "http://www.electrovoice.com/family.php?id=182",
+			logo: File.new(Rails.root.to_s + '/app/assets/images/manufacturer/ev.jpg'))
 
 sm57 = Microphone.create(manufacturer: shure, model: "SM57", kind: "dynamic", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/sm57.jpg'))
 sm81 = Microphone.create(manufacturer: shure, model: "SM81", kind: "small-condenser", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/sm81.jpg'))
@@ -60,13 +64,15 @@ at4033 = Microphone.create(manufacturer: audio_technica, model: "AT4033", kind: 
 r121 = Microphone.create(manufacturer: royer, model: "R-121", kind: "ribbon", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/royer121.jpg'))
 sf2 = Microphone.create(manufacturer: royer, model: "SF-2", kind: "ribbon", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/royer2.jpg'))
 i5 = Microphone.create(manufacturer: audix, model: "i5", kind: "dynamic", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/i5.jpg'))
-cmc6 = Microphone.create(manufacturer: schoeps, model: "CMC6-UG", kind: "condenser", phantom: true, polar_pattern: "bidirectional", image: File.new(Rails.root.to_s + '/app/assets/images/mic/CMC6-UG.jpg'))
+cmc6 = Microphone.create(manufacturer: schoeps, model: "CMC6-UG", kind: "small-condenser", phantom: true, polar_pattern: "bidirectional", image: File.new(Rails.root.to_s + '/app/assets/images/mic/CMC6-UG.jpg'))
 
-yeti = Microphone.create(manufacturer: blue, model: "Yeti", kind: "USB", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/yeti.jpg'))
-snowball = Microphone.create(manufacturer: blue, model: "Snowball", kind: "USB", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/snowball.jpg'))
-at2020 = Microphone.create(manufacturer: audio_technica, model: "AT2020", kind: "USB", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/at2020.jpg'))
-nt5 = Microphone.create(manufacturer: rode, model: "NT5", kind: "condenser", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/nt5.jpg'))
-k2 = Microphone.create(manufacturer: rode, model: "K2", kind: "condenser", phantom: true, polar_pattern: "multi-pattern", image: File.new(Rails.root.to_s + '/app/assets/images/mic/k2.jpg'))
+yeti = Microphone.create(manufacturer: blue, model: "Yeti", kind: "USB", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/yeti.jpg'))
+snowball = Microphone.create(manufacturer: blue, model: "Snowball", kind: "USB", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/snowball.jpg'))
+at2020 = Microphone.create(manufacturer: audio_technica, model: "AT2020", kind: "USB", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/at2020.jpg'))
+nt5 = Microphone.create(manufacturer: rode, model: "NT5", kind: "small-condenser", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/nt5.jpg'))
+k2 = Microphone.create(manufacturer: rode, model: "K2", kind:"tube-condenser", phantom: true, polar_pattern: "multi-pattern", image: File.new(Rails.root.to_s + '/app/assets/images/mic/k2.jpg'))
+re20 = Microphone.create(manufacturer: ev, model: "RE20", kind: "dynamic", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/re20.jpg'))
+re635a = Microphone.create(manufacturer: ev, model: "RE635A", kind:"dynamic", phantom: false, polar_pattern: "omnidirectional", image: File.new(Rails.root.to_s + '/app/assets/images/mic/re635a.jpg'))
 
 
 ac_guitar = Instrument.create(name:"Acoustic Guitar", image: File.new(Rails.root.to_s + '/app/assets/images/instrument/ac_guitar.jpg'))

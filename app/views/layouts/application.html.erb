@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FinalProject</title>
+    <title>Mic Drop</title>
     <%= csrf_meta_tags %>
 
 	<!-- Compiled and minified CSS -->
@@ -20,30 +20,27 @@
   </head>
 
   <body>
-  <nav class="main-nav">
+
+  <div class="navbar-fixed">
+    <nav class="main-nav">
       <div class="nav-wrapper">
-        <%= link_to "WEBSITE NAME", root_path, class: "brand-logo" %>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><button id="mute-button"><i class="material-icons" id="mute-icon">volume_off</i></button></li>
-          <% if current_user %>
-            <li><%= link_to current_user.username, new_shootout_path %></li>
-            <li><%= link_to "New Shootout", new_shootout_path %></li>
-            <li><%= link_to 'Log Out', destroy_user_session_path, method: "delete" %></li>
-          <% else  %>
-            <li><%= link_to 'Log In', new_user_session_path %></li>
-            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <% end  %>
-        </ul>
+        <%= link_to "MIC DROP", root_path, class: "brand-logo" %>
+        <% if current_user %>
+          <%= render 'partials/user_dropdown', :user => current_user %>
+        <% else  %>
+          <%= render 'partials/guest_dropdown' %>
+        <% end  %>
       </div>
     </nav>
-
-<% if flash[:error] %>
-<div class="container small-container">
-  <div class="alert alert-danger">
-    <%= flash[:error] %>
   </div>
-</div>
-<% end  %>
+
+  <% if flash[:error] %>
+    <div class="container small-container">
+      <div class="alert alert-danger">
+        <%= flash[:error] %>
+      </div>
+    </div>
+  <% end  %>
 
     <%= yield %>
   </body>
