@@ -15,8 +15,8 @@ class ShootoutsController < ApplicationController
 	end
 
 	def create
-		newMic = Shootout.create(shootout_params)
-		if newMic.save
+		newShootout = Shootout.create(shootout_params)
+		if newShootout.save
 			redirect_to root_path
 		else
 	      flash[:error] = newMic.errors.full_messages.join(". ")

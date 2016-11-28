@@ -76,3 +76,5 @@ function removeField(e) {
   }
   $('#form-sm1').find('.new-shootout-field:visible:last').hide()
 }
+
+
