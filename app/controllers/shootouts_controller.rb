@@ -11,7 +11,7 @@ class ShootoutsController < ApplicationController
 	def new
 		@shootout = Shootout.new
 		@instruments = Instrument.all
-		@microphones = Microphone.all
+		@microphones = Microphone.order('model ASC')
 	end
 
 	def create
