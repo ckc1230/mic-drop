@@ -16,17 +16,26 @@
 //= require_tree .
 //= require owl.carousel
 
-
 $(document).on('turbolinks:load', function() {
   console.log( "ready!" );
+  $(".dropdown-button").dropdown({
+      hover: true, // Activate on hover
+      belowOrigin: true, // Displays dropdown below the button
+    });
+
   $(".owl-carousel").owlCarousel({
     paginationSpeed : 2000,
     rtl: true,
-    autoPlay:3000
+    autoPlay: 4000
   });
   $('select').material_select();
   $('#mute-button').on('click', muteVideo);
-  $(".collection-item").click(playSound)
+  $(".collection-item").click(playSound);
+  $(".remove-shootout-btn").click(removeField);
+  $("#add-shootout-mic-btn").click(addField);
+  $('#new-shootout-3 *').prop('disabled',true);
+  $('#new-shootout-4 *').prop('disabled',true);
+  $('#new-shootout-5 *').prop('disabled',true);
 });
 
 function playSound(e) {
@@ -47,4 +56,22 @@ function playSound(e) {
 function muteVideo() {
   $('#intro-video').prop('muted', !$('#intro-video').prop('muted'));
   $('#intro-video').prop('muted')? $('#mute-icon').html('volume_off'): $('#mute-icon').html('volume_up');
+}
+
+function addField(e) {
+  e.preventDefault();
+  $('#form-sm1').find('.new-shootout-field:hidden:first *').prop('disabled',false);
+  $('#form-sm1').find('.new-shootout-field:hidden:first').toggle()
+  if ($('#form-sm1').find('.new-shootout-field:visible:last').attr('id') == 'new-shootout-5') {
+    $("#add-shootout-mic-btn").toggle();
+  }
+}
+
+function removeField(e) {
+  e.preventDefault();
+  $('#form-sm1').find('.new-shootout-field:visible:last *').prop('disabled',true);
+  if ($('#form-sm1').find('.new-shootout-field:visible:last').attr('id') == 'new-shootout-5') {
+    $("#add-shootout-mic-btn").toggle();
+  }
+  $('#form-sm1').find('.new-shootout-field:visible:last').hide()
 }
