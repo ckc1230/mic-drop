@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20161128193107) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "slug"
+    t.index ["slug"], name: "index_instruments_on_slug", unique: true, using: :btree
   end
 
   create_table "manufacturers", force: :cascade do |t|
@@ -34,6 +36,8 @@ ActiveRecord::Schema.define(version: 20161128193107) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.string   "slug"
+    t.index ["slug"], name: "index_manufacturers_on_slug", unique: true, using: :btree
   end
 
   create_table "microphones", force: :cascade do |t|
@@ -49,7 +53,9 @@ ActiveRecord::Schema.define(version: 20161128193107) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "slug"
     t.index ["manufacturer_id"], name: "index_microphones_on_manufacturer_id", using: :btree
+    t.index ["slug"], name: "index_microphones_on_slug", unique: true, using: :btree
   end
 
   create_table "shootout_microphones", force: :cascade do |t|
@@ -88,8 +94,10 @@ ActiveRecord::Schema.define(version: 20161128193107) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "username"
+    t.string   "slug"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["slug"], name: "index_users_on_slug", unique: true, using: :btree
   end
 
   add_foreign_key "microphones", "manufacturers"
