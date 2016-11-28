@@ -21,7 +21,7 @@
 					  </tr>
 					  <tr>
 					    <th class="mic-table-header">Phantom:</th>
-					    <td class="mic-table-data"><%= microphone.phantom %></td>
+					    <td class="mic-table-data"><% if microphone.phantom %>Yes<% else %>No<% end %></td>
 					  </tr>
 					  <tr>
 					    <th class="mic-table-header">Polar Pattern:</th>

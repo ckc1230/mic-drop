@@ -1,7 +1,7 @@
 <div class="container mic-show-container">
 	<div class="row mic-info-row">
 		<div class="mic-info-image col m3">
-			<%= image_tag @microphone.image.url, class: "responsive-img" %>
+			<%= image_tag @microphone.image.url, class: "responsive-img shootout-mic-image" %>
 		</div>
 		<div class="mic-info-spec col m9">
 			<h5><%= @microphone.manufacturer.name %> <%= @microphone.model %></h5>
@@ -12,7 +12,7 @@
 			  </tr>
 			  <tr>
 			    <th class="mic-table-header">Phantom:</th>
-			    <td class="mic-table-data"><%= @microphone.phantom %></td>
+			    <td class="mic-table-data"><% if @microphone.phantom %>Yes<% else %>No<% end %></td>
 			  </tr>
 			  <tr>
 			    <th class="mic-table-header">Polar Pattern:</th>
