@@ -8,3 +8,13 @@
 <% @shootouts.each do |shootout|  %>
 	<%= render 'partials/shootout_list', :shootout => shootout %>
 <% end  %>
+
+
+<div class="center">
+	<div class="apple_pagination">
+	    <div class="page_info">
+	      <%= page_entries_info @shootouts %>
+	    </div>
+	    <%= will_paginate @shootouts %>
+	</div>
+</div>

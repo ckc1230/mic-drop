@@ -1,6 +1,6 @@
 class ShootoutsController < ApplicationController
 	def index
-		@shootouts = Shootout.all.order('created_at DESC')
+		@shootouts = Shootout.all.order('created_at DESC').page(params[:page]).per_page(3)
 		@manufacturers = Manufacturer.order('name ASC')
 		@instruments = Instrument.order('name ASC')
 	end
