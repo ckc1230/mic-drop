@@ -1,0 +1,53 @@
+
+<div class="container shootout-container" style="background:url('<%= shootout.instrument.image.url %>'); background-size: cover;">
+	<div class="col s12 m12">
+        <div class="row current-shootout-header">
+            <div class="current-instrument col">
+                <%= shootout.instrument.name %>
+            </div>        	
+           	<div class="current-uploader col right">
+                <%= link_to shootout.user.username, user_path(shootout.user), class: "uploader-link" %>
+            </div>
+        </div>
+		<div class="row shootout-body">
+            <div class="col s3 m3">
+                <div class="current-mic row center">
+                    <span class="current-mic-manu"><%= shootout.shootout_microphones.first.microphone.manufacturer.name %> <%= shootout.shootout_microphones.first.microphone.model %></span>
+                </div>
+                <div class="row shootout-mic-image">
+                    <%= image_tag shootout.shootout_microphones.first.microphone.image.url, class: "responsive-img current-mic-img" %>
+                </div>
+            </div>
+			<div class="col s9 m9 audiowrap">
+                <div class="row">
+                    <audio preload class="audio-track" controls="controls" id="shootout-audio-<%= shootout.id %>">
+                    <source class="audio-source" src="<%= shootout.shootout_microphones.first.audio.url %>">
+                    	Your browser does not support HTML5 Audio!
+                    </audio>
+                </div>
+        		<div class="row">
+                    <div class="collection shootout-list">
+        				<% shootout.shootout_microphones.each do |sm| %>
+        				<% mic = sm.microphone %>
+                            <div class="row collection-item-row">
+                                <p hidden class="collection-item-img-url"><%= mic.image.url %></p>         
+                                <a href="#" id="<%= sm.audio.url %>" class="collection-item col waves-effect waves-purple">
+                                    <div class="shootout-item" >
+                                        <div class="shootout-item-title">
+                                            <span class="shootout-item-name">
+                                                <%= mic.manufacturer.name %> <%= mic.model %>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="col mic-info-btn">
+            						<%= link_to '+', microphone_path(mic), class: "btn grey darken-4 go-to-mic-btn" %>
+                                </div>
+                            </div>
+        	            <% end  %>
+                    </div>
+                </div>
+            </div>  
+        </div>
+	</div>
+</div>
