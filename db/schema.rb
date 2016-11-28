@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128193107) do
+ActiveRecord::Schema.define(version: 20161128212059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fav_shootouts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "shootout_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["shootout_id"], name: "index_fav_shootouts_on_shootout_id", using: :btree
+    t.index ["user_id"], name: "index_fav_shootouts_on_user_id", using: :btree
+  end
 
   create_table "instruments", force: :cascade do |t|
     t.string   "name"
@@ -100,6 +109,8 @@ ActiveRecord::Schema.define(version: 20161128193107) do
     t.index ["slug"], name: "index_users_on_slug", unique: true, using: :btree
   end
 
+  add_foreign_key "fav_shootouts", "shootouts"
+  add_foreign_key "fav_shootouts", "users"
   add_foreign_key "microphones", "manufacturers"
   add_foreign_key "shootout_microphones", "microphones"
   add_foreign_key "shootout_microphones", "shootouts"

@@ -55,7 +55,9 @@
 		<% end  %>
     </div>
     <div id="test2" class="col s12">
-    	Test 2
+    	<% @fav_shootouts.each do |shootout|  %>
+			<%= render 'partials/shootout_list', :shootout => shootout %>
+		<% end  %>
 	</div>
 
 <% else  %>
