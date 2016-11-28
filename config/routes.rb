@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :microphones, except: [:edit, :update] 
   resources :shootouts, except: [:edit, :update]
   resources :manufacturers, :instruments, :users
+  resources :fav_shootouts, only: :create
 
 end

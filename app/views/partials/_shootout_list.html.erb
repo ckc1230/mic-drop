@@ -5,7 +5,7 @@
             <div class="current-instrument col">
                 <%= shootout.instrument.name %>
             </div>        	
-           	<div class="current-uploader col right">
+            <div class="current-uploader col right">
                 <%= link_to shootout.user.username, user_path(shootout.user), class: "uploader-link" %>
             </div>
         </div>
@@ -46,6 +46,15 @@
                             </div>
         	            <% end  %>
                     </div>
+                    <% if (current_user && current_user != shootout.user) %>            
+                <div class="fav-btn-div col right">
+                    <%= form_for (FavShootout.new) do |f| %>
+                        <%= f.hidden_field :user_id, value: current_user.id %> 
+                        <%= f.hidden_field :shootout_id, value: shootout.id %>
+                        <%= f.submit 'Save', class: "fav-btn black right" %>
+                    <% end  %>
+                </div>
+            <% end  %>
                 </div>
             </div>  
         </div>
