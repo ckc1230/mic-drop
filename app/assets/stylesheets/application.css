@@ -23,12 +23,13 @@
 .signup-container {
     background: url("http://dbar-productions.com/dbarwpblog/wp-content/uploads/2012/06/01.jpg");
     height: 92vh;
+    padding-top: 30px;
 }
 
 .signup-form, .signup-disclaimer {
     background: rgba(255,255,255,0.8);
     padding: 0 40px 20px 40px !important;
-    margin-top: 30px;
+    margin-top: 0 !important;
     border: 5px solid black;
     font-weight: bold;
 }
@@ -37,8 +38,6 @@
     font-family: 'Bungee Inline', cursive;
     color: black;
 }
-
-
 
 .main-nav {
     height: 65px;
@@ -154,6 +153,46 @@
 	vertical-align: middle;
 }
 
+.new-shootout-form-container {
+    width: 60%;
+    padding-right: 0 !important;
+}
+
+.shootout-input-field {
+    margin-top: 0 !important;
+}
+
+.shootout-input-field input {
+    margin-bottom: 0px !important;
+}
+
+.shootout-form-instrument-field {
+    padding-left: 0 !important;
+}
+
+#add-shootout-mic-btn {
+    margin: 20px 0 0 55px;
+}
+
+.remove-shootout-btn {
+    padding: 5px !important;
+    height: 19px !important;
+    line-height: 10px !important;
+}
+
+.remove-shootout-div {
+    text-align: center;
+}
+
+#submit-shootout-btn {
+    margin: 20px 80px 0 0;
+}
+
+.go-to-mic-btn {
+    border: 2px solid white;
+    height: 38px;
+}
+
 .shootout-container {
 	padding: 5px 30px 0 30px;
 	margin-top: 30px;
@@ -161,6 +200,15 @@
 	border: 5px solid black;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+}
+
+.user-microphone-list {
+    margin-bottom: 0 !important;
+    column-width: 150px;
+}
+
+.user-microphone-list-ul {
+    margin: 0;
 }
 
 .shootout-body {
@@ -275,7 +323,7 @@
 }
 
 .current-uploader {
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 .uploader-link {
@@ -293,14 +341,18 @@
 
 .current-instrument {
     color: white;
-    font-size: 40px;
-    font-weight: bold;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 35px;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     font-family: 'Bungee Inline', cursive;
 }
 
 .shootout-item-title {
     margin-left: 20px;
+}
+
+#upload-shootout-header {
+    margin-bottom: 0px !important;
+    font-family: 'Bungee Inline', cursive;
 }
 
 .manu-mic-display {

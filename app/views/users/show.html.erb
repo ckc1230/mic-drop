@@ -1,20 +1,44 @@
 <div class="container user-show-container">
-	<% if current_user %>
-		<% if @user === current_user %>
-			<h5>Hi <%= @user.username %></h5>
-			<% if @user.shootouts.count === 0  %>
-				<p>You currently have no uploaded shootouts. <br>
-				Feel free to upload your first shootout <%= link_to 'here', new_shootout_path %>!
-				</p>
-			<% else  %>
-				<p>Thank you for contributing to Mic Drop. Here are the shootouts you've uploaded:</p>
+	<div class="row">
+		<div class="col m4">
+			<% if current_user && @user === current_user%>
+				<h5>Hi <%= @user.username %></h5>
+				<% if @user.shootouts.count === 0  %>
+					<p>You currently have no uploaded shootouts. <br>
+					Feel free to upload your first shootout <%= link_to 'here', new_shootout_path %>!
+					</p>
+				<% else  %>
+					<p>Thank you for contributing to Mic Drop. Here are the shootouts you've uploaded:</p>
+				<% end  %>
+			<% else %>
+				<h5><%= @user.username %></h5>
+				<p>Joined on: <%= @user.created_at.strftime("%b. %d, %Y") %></p>
+				<p>Shootouts posted: <%= @user.shootouts.count %></p>
 			<% end  %>
-		<% end  %>
-	<% else %>
-		<h5><%= @user.username %></h5>
-		<p>Joined on: <%= @user.created_at.strftime("%b. %d, %Y") %></p>
-		<p>Shootouts posted: <%= @user.shootouts.count %></p>
-	<% end  %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col m6">
+			<h5>Shootouts by Instruments</h5>	
+			<ul>
+				<% @instruments.each do |instrument| %>
+					<li><%= instrument.name %></li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="col m6">
+			<div class="row">
+				<h5>Shootouts by Microphone</h5>	
+			</div>
+			<div class="row user-microphone-list">
+				<ul class="user-microphone-list-ul">
+					<% @microphones.each do |mic| %>
+						<li><%= mic.manufacturer.name %> <%= mic.model %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
 
 <% @user.shootouts.each do |shootout|  %>

@@ -29,6 +29,7 @@ $(document).on('turbolinks:load', function() {
     autoPlay: 4000
   });
   $('select').material_select();
+  $("select[required]").css({display: "inline", height: 0, padding: 0, width: 0, position: 'absolute', opacity: '0'});
   $('#mute-button').on('click', muteVideo);
   $(".collection-item").click(playSound);
   $(".remove-shootout-btn").click(removeField);
@@ -75,3 +76,5 @@ function removeField(e) {
   }
   $('#form-sm1').find('.new-shootout-field:visible:last').hide()
 }
+
+

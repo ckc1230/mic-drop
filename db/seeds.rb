@@ -47,6 +47,7 @@ ev = Manufacturer.create(
 			logo: File.new(Rails.root.to_s + '/app/assets/images/manufacturer/ev.jpg'))
 
 sm57 = Microphone.create(manufacturer: shure, model: "SM57", kind: "dynamic", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/sm57.jpg'))
+sm57fake = Microphone.create(manufacturer: shure, model: "SM57(fake)", kind: "dynamic", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/sm57fake.jpg'))
 sm81 = Microphone.create(manufacturer: shure, model: "SM81", kind: "small-condenser", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/sm81.jpg'))
 sm7 = Microphone.create(manufacturer: shure, model: "SM7", kind: "dynamic", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/sm7.jpg'))
 c414 = Microphone.create(manufacturer: akg, model: "C414", kind: "large-condenser", phantom: true, polar_pattern: "multi-pattern", image: File.new(Rails.root.to_s + '/app/assets/images/mic/akg414.jpg'))
@@ -61,6 +62,7 @@ e609 = Microphone.create(manufacturer: sennheiser, model: "e609", kind: "dynamic
 
 
 at4033 = Microphone.create(manufacturer: audio_technica, model: "AT4033", kind: "large-condenser", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/at4033.jpg'))
+at4050 = Microphone.create(manufacturer: audio_technica, model: "AT4050", kind: "large-condenser", phantom: true, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/at4050.jpg'))
 r121 = Microphone.create(manufacturer: royer, model: "R-121", kind: "ribbon", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/royer121.jpg'))
 sf2 = Microphone.create(manufacturer: royer, model: "SF-2", kind: "ribbon", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/royer2.jpg'))
 i5 = Microphone.create(manufacturer: audix, model: "i5", kind: "dynamic", phantom: false, polar_pattern: "cardioid", image: File.new(Rails.root.to_s + '/app/assets/images/mic/i5.jpg'))

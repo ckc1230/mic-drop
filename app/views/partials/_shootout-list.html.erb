@@ -34,12 +34,14 @@
                                 <a href="#" id="<%= sm.audio.url %>" class="collection-item col waves-effect waves-purple">
                                     <div class="shootout-item" >
                                         <div class="shootout-item-title">
-                                            <span class="shootout-item-name"><%= mic.manufacturer.name %> <%= mic.model %></span>
+                                            <span class="shootout-item-name">
+                                                <%= mic.manufacturer.name %> <%= mic.model %>
+                                            </span>
                                         </div>
                                     </div>
                                 </a>
                                 <div class="col mic-info-btn">
-            						<%= link_to '+', microphone_path(mic), class: "btn" %>
+            						<%= link_to '+', microphone_path(mic), class: "btn grey darken-4 go-to-mic-btn" %>
                                 </div>
                             </div>
         	            <% end  %>
