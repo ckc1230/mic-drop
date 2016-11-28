@@ -1,6 +1,6 @@
 <div class="container user-show-container">
 	<div class="row user-show-info">
-		<div class="col m4">
+		<div class="col m12">
 			<% if current_user && @user === current_user%>
 				<h5>Hi <%= @user.username %></h5>
 				<% if @user.shootouts.count === 0  %>

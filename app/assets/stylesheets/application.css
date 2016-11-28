@@ -396,6 +396,20 @@
     font-family: 'Bungee Inline', cursive;
 }
 
+.fav-btn {
+    margin: 0;
+}
+
+.fav-btn-div {
+    padding: 0 !important;
+    margin-top: 5px;
+    background: rgba(255,255,255,0.5);
+    color: white;
+    font-size: 20px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-family: 'Bungee Inline', cursive;
+}
+
 .apple_pagination {
   background: black;
   color: white;
