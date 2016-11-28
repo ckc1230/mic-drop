@@ -154,7 +154,8 @@
 }
 
 .new-shootout-form-container {
-    width: 70%;
+    width: 60%;
+    padding-right: 0 !important;
 }
 
 .shootout-input-field {
@@ -170,11 +171,26 @@
 }
 
 #add-shootout-mic-btn {
-    margin-left: 30px;
+    margin: 20px 0 0 55px;
+}
+
+.remove-shootout-btn {
+    padding: 5px !important;
+    height: 19px !important;
+    line-height: 10px !important;
+}
+
+.remove-shootout-div {
+    text-align: center;
 }
 
 #submit-shootout-btn {
-    margin-right: 30px;
+    margin: 20px 80px 0 0;
+}
+
+.go-to-mic-btn {
+    border: 2px solid white;
+    height: 38px;
 }
 
 .shootout-container {
