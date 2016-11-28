@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   }
 
   root "shootouts#index"
-  resources :microphones, :shootouts, :manufacturers, :instruments
+  get "/pages/about", "page#show"
+  resources :microphones, :shootouts, :manufacturers, :instruments, :users
 
 end

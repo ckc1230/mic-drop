@@ -6,7 +6,7 @@
                 <%= shootout.instrument.name %>
             </div>        	
            	<div class="current-uploader col right">
-                <%= shootout.user.username %>
+                <%= link_to shootout.user.username, user_path(shootout.user), class: "uploader-link" %>
             </div>
         </div>
 		<div class="row shootout-body">
