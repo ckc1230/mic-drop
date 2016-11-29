@@ -46,6 +46,7 @@
 	* Users can see uploader's profile by clicking on uploader's username
 * User can view a specific microphone's info page by clicking on the '+' button next to each microphone.
 
+## Code Snippet
 
 ```erb
 <div>
