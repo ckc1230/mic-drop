@@ -410,6 +410,11 @@
     font-family: 'Bungee Inline', cursive;
 }
 
+.no-fav-shootouts-msg {
+    margin-top: 30px;
+    font-family: 'Bungee Inline', cursive;   
+}
+
 .apple_pagination {
   background: black;
   color: white;
