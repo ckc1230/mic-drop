@@ -46,6 +46,7 @@
 	* Users can see uploader's profile by clicking on uploader's username
 * User can view a specific microphone's info page by clicking on the '+' button next to each microphone.
 
+## Code Snippet
 
 ```erb
 <div>
@@ -86,6 +87,12 @@ def create
 	else
       flash[:error] = newShootout.errors.full_messages.join(". ")
       redirect_to new_shootout_path
+  end
+
+  private
+
+  def shootout_params
+	params.require(:shootout).permit(:user_id, :instrument_id, shootout_microphones_attributes: [:microphone_id, :audio])
   end
 end
 ```
