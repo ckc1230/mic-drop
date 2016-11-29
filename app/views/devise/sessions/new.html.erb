@@ -9,8 +9,11 @@
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <p>Don't have an account? Sign up <%= link_to 'here', new_user_registration_path %>.</p>
-
-        
+        <div class="devise-error">
+          <%- flash.each do |name, msg| -%>
+            <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+          <%- end -%>  
+        </div>
       </div>
       <div class="col m5 offset-m1 signup-form">
         <h2 class="user-form-header">Log in</h2>
