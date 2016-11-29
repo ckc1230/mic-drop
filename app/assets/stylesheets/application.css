@@ -97,6 +97,7 @@
 
 .user-form-header {
     font-family: 'Bungee Inline', cursive;
+    margin-top: 20px;
 }
 
 #mute-icon {
@@ -408,6 +409,18 @@
     font-size: 20px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     font-family: 'Bungee Inline', cursive;
+}
+
+.no-fav-shootouts-msg {
+    margin-top: 30px;
+    font-family: 'Bungee Inline', cursive;   
+}
+
+.devise-error {
+    background: rgba(255,0,0,0.3);
+    margin-top: 0 !important;
+    font-weight: bold;
+    text-align: center;
 }
 
 .apple_pagination {

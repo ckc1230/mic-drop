@@ -19,7 +19,7 @@ class ShootoutsController < ApplicationController
 		if newShootout.save
 			redirect_to root_path
 		else
-	      flash[:error] = newMic.errors.full_messages.join(". ")
+	      flash[:error] = newShootout.errors.full_messages.join(". ")
 	      redirect_to new_shootout_path
 	  end
 	end

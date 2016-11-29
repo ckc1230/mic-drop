@@ -25,6 +25,11 @@
 			</table>
 		</div>
 	</div>
+	<div class="row">
+		<p class="center">More microphones by 
+			<%= link_to @microphone.manufacturer.name, manufacturer_path(@microphone.manufacturer)  %>
+		</p>	
+	</div>
 </div>
 
 <h5 id="index-shootout-header" class="left-align index-section-header">Shootouts</h5><hr class="index-section-hr">

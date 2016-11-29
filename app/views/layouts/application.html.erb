@@ -34,15 +34,6 @@
       </div>
     </nav>
   </div>
-
-  <% if flash[:error] %>
-    <div class="container small-container">
-      <div class="alert alert-danger">
-        <%= flash[:error] %>
-      </div>
-    </div>
-  <% end  %>
-
     <%= yield %>
   </body>
 </html>

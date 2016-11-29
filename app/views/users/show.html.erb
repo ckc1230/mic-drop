@@ -55,9 +55,14 @@
 		<% end  %>
     </div>
     <div id="test2" class="col s12">
+    <% if @fav_shootouts.count == 0 %>
+    	<p class="center no-fav-shootouts-msg">Add your favorite shootouts to this list for quick reference!<br>
+    	Browse by manufacturer or instrument <%= link_to 'here', root_path %>. </p>
+    <% else  %>
     	<% @fav_shootouts.each do |shootout|  %>
 			<%= render 'partials/shootout_list', :shootout => shootout %>
 		<% end  %>
+	<% end  %>
 	</div>
 
 <% else  %>
