@@ -35,7 +35,6 @@
 			      </div>
 			    <% end %>
 			</div>
-
 			<div class="row new-shootout-field" id="new-shootout-3" hidden>
 			  	<%= f.fields_for :shootout_microphones, ShootoutMicrophone.new, html: { multipart: true } do |builder| %>
 			      <div class="input-field shootout-input-field col s6">
@@ -81,7 +80,6 @@
 			      </div>
 			    <% end %>
 			</div>
-
 		 <div class="row">
 		  	<button class="btn black" id="add-shootout-mic-btn">Add Another Microphone</button>
 		    <%= f.submit 'Submit', class: "btn right", id: "submit-shootout-btn" %>
