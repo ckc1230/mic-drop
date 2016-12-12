@@ -86,6 +86,7 @@ Rails.application.configure do
 
   # AWS S3 - Paperclip
   config.paperclip_defaults = {
+    s3_host_name: 'mic-drop-assets.s3.amazonaws.com'
     storage: :s3,
     s3_credentials: {
       bucket: ENV.fetch('S3_BUCKET_NAME'),
