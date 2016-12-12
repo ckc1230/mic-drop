@@ -19,6 +19,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'owlcarousel-rails'
 # Paperclip
 gem "paperclip", "~> 5.0.0"
+#AWS-s3
+gem 'aws-sdk', '~> 2.3'
 # will_paginate
 gem 'will_paginate'
 # friendly_id
