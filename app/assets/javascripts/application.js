@@ -26,6 +26,7 @@ $(document).on('turbolinks:load', function() {
   $(".owl-carousel").owlCarousel({
     paginationSpeed : 2000,
     rtl: true,
+    stopOnHover: true,
     autoPlay: 4000
   });
   $('ul.tabs').tabs();
