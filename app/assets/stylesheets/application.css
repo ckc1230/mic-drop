@@ -159,6 +159,12 @@
     padding-right: 0 !important;
 }
 
+.audio-label {
+    margin-top: 8px;
+    padding-left: 80px;
+    font-size: 12px !important;
+}
+
 .shootout-input-field {
     margin-top: 0 !important;
 }

@@ -19,8 +19,9 @@
 			      </div>
 			      <div class="input-field shootout-input-field col s5">
 			        <i class="material-icons prefix">hearing</i>
-			        <%= builder.file_field :audio, {required: true} %>
-			      </div>
+			        <%= builder.file_field :audio, {required: true}%>
+							<%=label_tag :audio, "(Max File Size: 3MB)", class: "audio-label" %>			      
+						</div>
 			    <% end %>
 			</div>
 			<div class="row new-shootout-field" id="new-shootout-2">
@@ -32,6 +33,7 @@
 			      <div class="input-field shootout-input-field col s6">
 			        <i class="material-icons prefix">hearing</i>
 			        <%= builder.file_field :audio, {required: true} %>
+							<%=label_tag :audio, "(Max File Size: 3MB)", class: "audio-label" %>
 			      </div>
 			    <% end %>
 			</div>
@@ -44,6 +46,7 @@
 			      <div class="input-field shootout-input-field col s4">
 			        <i class="material-icons prefix">hearing</i>
 			        <%= builder.file_field :audio, {required: true} %>
+							<%=label_tag :audio, "(Max File Size: 3MB)", class: "audio-label" %>
 			      </div>
 			      <div class="col s1 remove-shootout-div">
 			      	<button class="remove-shootout-btn btn red">X</button>
@@ -59,6 +62,7 @@
 			      <div class="input-field shootout-input-field col s4">
 			        <i class="material-icons prefix">hearing</i>
 			        <%= builder.file_field :audio, {required: true} %>
+							<%=label_tag :audio, "(Max File Size: 3MB)", class: "audio-label" %>
 			      </div>
 			      <div class="col s1 remove-shootout-div">
 			      	<button class="remove-shootout-btn btn red">X</button>
@@ -74,6 +78,7 @@
 			      <div class="input-field shootout-input-field col s4">
 			        <i class="material-icons prefix">hearing</i>
 			        <%= builder.file_field :audio, {required: true} %>
+							<%=label_tag :audio, "(Max File Size: 3MB)", class: "audio-label" %>
 			      </div>
 			      <div class="col s1 remove-shootout-div">
 			      	<button class="remove-shootout-btn btn red">X</button>
