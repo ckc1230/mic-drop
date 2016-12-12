@@ -27,7 +27,7 @@ $(document).on('turbolinks:load', function() {
     paginationSpeed : 2000,
     rtl: true,
     stopOnHover: true,
-    autoPlay: 4000
+    autoPlay: 6000
   });
   $('ul.tabs').tabs();
   $('select').material_select();
