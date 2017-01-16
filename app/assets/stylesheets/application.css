@@ -20,6 +20,26 @@
     margin-bottom: 10px;
 }
 
+.landing-container {
+    background-image: url('micdrop.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+#landing-text {
+    display: table-cell;
+    padding: 350px 0 100px 30px;
+    font-family: Tahoma, sans-serif;
+}
+
+.med-header {
+    font-size: 20px;
+    font-family: 'Bungee Inline', cursive;
+}
+
 .signup-container {
     background: url("http://dbar-productions.com/dbarwpblog/wp-content/uploads/2012/06/01.jpg");
     height: 92vh;
@@ -50,7 +70,17 @@
     margin-right: 30px;
 }
 
+.header-nav-item {
+    float: right;
+    margin-right: 20px;
+}
+
 #intro-text-wrapper {
+    background: rgba(0,0,0,0.3);
+    height: 100%;
+}
+
+#landing-text-wrapper {
     background: rgba(0,0,0,0.3);
     height: 100%;
 }
@@ -254,6 +284,10 @@
     width: 80%
 }
 
+.manu-index-container {
+    width: 80%;
+}
+
 .manu-img-div {
     height: 120px;
     line-height: 120px;
@@ -262,6 +296,21 @@
     margin: 0 20px 0 20px;
     background: white;
     padding: 3px;
+}
+
+.manu-index-img-div {
+    height: 180px;
+    line-height: 180px;
+    width: 180px;
+    display: inline-block;
+    margin: 0 20px 0 20px;
+    background: white;
+    padding: 5px;
+    border-radius: 5%;
+}
+
+.manu-index-img-div:hover {
+    background: rgba(200,250,250,1);
 }
 
 .manu-row {
@@ -279,7 +328,8 @@
     display: inline-block;
     height: 100%;
     vertical-align: middle;
-    max-height: 100px;
+    max-height: 160px;
+    max-width: 200px;
     border: 5px solid black;
 }
 
@@ -289,6 +339,15 @@
     width: 120px;
     display: inline-block;
     margin: 0 20px 0 20px;
+    background: white;
+}
+
+.instrument-index-img-div {
+    height: 120px;
+    line-height: 120px;
+    width: 200px;
+    display: inline-block;
+    margin: 20px;
     background: white;
 }
 
