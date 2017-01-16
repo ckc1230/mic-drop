@@ -54,6 +54,10 @@
     font-weight: bold;
 }
 
+#login-mic-img {
+    transform: rotate(25deg);
+}
+
 .field-label {
     font-family: 'Bungee Inline', cursive;
     color: black;
