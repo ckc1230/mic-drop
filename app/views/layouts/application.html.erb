@@ -31,6 +31,10 @@
         <% else  %>
           <%= render 'partials/guest_dropdown' %>
         <% end  %>
+        <%= link_to "Manufacturers", manufacturers_path, class: "header-nav-item" %>
+        <i class="material-icons header-nav-item">store</i>
+        <%= link_to "Instruments", instruments_path, class: "header-nav-item" %>
+        <i class="material-icons header-nav-item">queue_music</i>
       </div>
     </nav>
   </div>
