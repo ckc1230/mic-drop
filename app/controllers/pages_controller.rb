@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-	def show
+	def about
 		render template: "pages/about"
-	end
+	end	
 end

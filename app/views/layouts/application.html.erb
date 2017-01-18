@@ -27,7 +27,7 @@
       <div class="nav-wrapper">
         <%= link_to "MIC DROP", root_path, class: "brand-logo" %>
         <% if current_user %>
-          <%= render 'partials/user_dropdown', :user => current_user %>
+          <%= render 'partials/user_dropdown', :user => current_user, class: "header-nav-item" %>
         <% else  %>
           <%= render 'partials/guest_dropdown' %>
         <% end  %>

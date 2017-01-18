@@ -20,11 +20,6 @@
     margin-bottom: 10px;
 }
 
-.med-header {
-    font-size: 20px;
-    font-family: 'Bungee Inline', cursive;
-}
-
 .landing-container {
     background-image: url('http://i.imgur.com/Y3EtXVX.jpg');
     background-position: center;
@@ -40,24 +35,10 @@
     font-family: Tahoma, sans-serif;
 }
 
-#landing-text-wrapper {
-    background: rgba(0,0,0,0.3);
-    height: 100%;
-}
 
-#intro-text-box {
-    color: white;
-    text-align: left;
-    display: table;
-    height: 100%;
-    width: 50%;
-    margin-left: 100px;
-}
-
-#intro-text {
-    display: table-cell;
-    padding-top: 400px;
-    font-family: Tahoma, sans-serif;
+.med-header {
+    font-size: 20px;
+    font-family: 'Bungee Inline', cursive;
 }
 
 .signup-container {
@@ -74,33 +55,8 @@
     font-weight: bold;
 }
 
-.header-nav-item {
-    float: right;
-    margin-right: 20px;
-}
-
-.manu-index-img-div {
-    height: 180px;
-    line-height: 180px;
-    width: 180px;
-    display: inline-block;
-    margin: 0 20px 0 20px;
-    background: white;
-    padding: 5px;
-    border-radius: 5%;
-}
-
-.manu-index-img-div:hover {
-    background: rgba(200,250,250,1);
-}
-
-.instrument-index-img-div {
-    height: 120px;
-    line-height: 120px;
-    width: 200px;
-    display: inline-block;
-    margin: 20px;
-    background: white;
+#login-mic-img {
+    transform: rotate(25deg);
 }
 
 .field-label {
@@ -119,7 +75,17 @@
     margin-right: 30px;
 }
 
+.header-nav-item {
+    float: right;
+    margin-right: 20px;
+}
+
 #intro-text-wrapper {
+    background: rgba(0,0,0,0.3);
+    height: 100%;
+}
+
+#landing-text-wrapper {
     background: rgba(0,0,0,0.3);
     height: 100%;
 }
@@ -323,6 +289,10 @@
     width: 80%
 }
 
+.manu-index-container {
+    width: 80%;
+}
+
 .manu-img-div {
     height: 120px;
     line-height: 120px;
@@ -331,6 +301,21 @@
     margin: 0 20px 0 20px;
     background: white;
     padding: 3px;
+}
+
+.manu-index-img-div {
+    height: 180px;
+    line-height: 180px;
+    width: 180px;
+    display: inline-block;
+    margin: 0 20px 0 20px;
+    background: white;
+    padding: 5px;
+    border-radius: 5%;
+}
+
+.manu-index-img-div:hover {
+    background: rgba(200,250,250,1);
 }
 
 .manu-row {
@@ -359,6 +344,15 @@
     width: 120px;
     display: inline-block;
     margin: 0 20px 0 20px;
+    background: white;
+}
+
+.instrument-index-img-div {
+    height: 120px;
+    line-height: 120px;
+    width: 200px;
+    display: inline-block;
+    margin: 20px;
     background: white;
 }
 
