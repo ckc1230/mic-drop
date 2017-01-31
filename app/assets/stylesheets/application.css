@@ -375,7 +375,12 @@
 
 .shootout-mic-image {
     padding: 10px;
+    text-align: center;
     background: rgba(255,255,255,0.5);
+}
+
+.shootout-mic-image img {
+    vertical-align: middle;
 }
 
 .mic-info-btn {
@@ -558,7 +563,40 @@
     .collection-item {
         width: 70%;
     }
+    .shootout-mic-image {
+        padding: 8px;
+    }
+    .current-mic {
+        font-size: 15px;
+    }
     .go-to-mic-btn {
         width: 60px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .collection-item {
+        width: 65%;
+    }
+    .current-instrument {
+        font-size: 25px;
+    }
+    .current-uploader {
+        margin-top: 0;
+    }
+    .go-to-mic-btn {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .collection-item {
+        width: 60%;
+    }
+    .current-instrument {
+        font-size: 20px;
+    }
+    .go-to-mic-btn {
+        width: 45px;
     }
 }
