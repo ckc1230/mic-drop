@@ -5,10 +5,11 @@
 		
 		<% @instruments.each do |instrument|  %>
 		<%= link_to(instrument) do %>
-		<div class="instrument-index-img-div">
-			<%= image_tag instrument.image.url, class: "instrument-img" %>
-			<p class="instrument-name"><%= instrument.name %></p>
+
+		<div class="instrument-index-img-div" style="background:url('<%= instrument.image.url %>')">
+			<p><%= instrument.name %></p>
 		</div>
+
 		<% end  %>
 	<% end  %>
 	</div>

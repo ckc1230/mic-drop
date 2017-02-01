@@ -3,9 +3,8 @@
 	<div class="owl-carousel col">
 	<% @instruments.each do |instrument|  %>
 		<%= link_to(instrument) do %>
-		<div class="instrument-img-div item">
-			<%= image_tag instrument.image.url, class: "responsive-img instrument-img" %>
-			<p class="instrument-name"><%= instrument.name %></p>
+		<div class="instrument-index-img-div instrument-index-img-div-small" style="background:url('<%= instrument.image.url %>')">
+			<p><%= instrument.name %></p>
 		</div>
 		<% end  %>
 	<% end  %>
