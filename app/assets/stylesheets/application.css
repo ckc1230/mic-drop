@@ -72,6 +72,14 @@
     transform: rotate(25deg);
 }
 
+.login-mic-list {
+    margin-left: 25px;
+}
+
+.login-mic-list li {
+    list-style-type: disc !important;
+}
+
 .field-label {
     font-family: 'Bungee Inline', cursive;
     color: black;
