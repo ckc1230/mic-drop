@@ -39,6 +39,7 @@ $(document).on('turbolinks:load', function() {
   $('#new-shootout-3 *').prop('disabled',true);
   $('#new-shootout-4 *').prop('disabled',true);
   $('#new-shootout-5 *').prop('disabled',true);
+  $('#landing-text').css('left', '10%');
 });
 
 function playSound(e) {

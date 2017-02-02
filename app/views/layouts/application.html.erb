@@ -12,8 +12,8 @@
   <!--   Google Fonts -->  
   <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 	<!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
@@ -31,10 +31,12 @@
         <% else  %>
           <%= render 'partials/guest_dropdown' %>
         <% end  %>
-        <%= link_to "Manufacturers", manufacturers_path, class: "header-nav-item" %>
-        <i class="material-icons header-nav-item">store</i>
-        <%= link_to "Instruments", instruments_path, class: "header-nav-item" %>
-        <i class="material-icons header-nav-item">queue_music</i>
+        <div class="hide-on-med-and-down">
+          <%= link_to "Manufacturers", manufacturers_path, class: "header-nav-item" %>
+          <i class="material-icons header-nav-item">store</i>
+          <%= link_to "Instruments", instruments_path, class: "header-nav-item" %>
+          <i class="material-icons header-nav-item">queue_music</i>
+        </div>
       </div>
     </nav>
   </div>

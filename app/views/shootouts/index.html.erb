@@ -2,15 +2,17 @@
 	<div id="landing-text-wrapper">
 		<div id="intro-text-box">
 			<div id="landing-text">
-				<div id="intro-top">
 					<h3 id="intro-header">Mic Drop</h3>
 					<h5>Your Resource for Microphone Shootouts</h5>
 					<ul>
 						<li>Browse for Shootouts by Manufacturer or Instrument</li>
 						<li>Sign Up to Upload Your Own Shootout</li>
 					</ul>
-				</div>
 			</div>
+		</div>
+		<div class="option-row hide-on-large-only mic-drop-font">
+			<%= link_to "Instruments", instruments_path, class: "option-btn" %>
+			<%= link_to "Manufacturers", manufacturers_path, class: "option-btn" %>
 		</div>
 	</div>
 </div>

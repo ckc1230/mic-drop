@@ -1,17 +1,19 @@
 <div class="fullscreen-bg">
-	<%= video_tag("intro.mov", loop: true, muted: true, autoplay: true, class: "fullscreen-bg-video responsive-video", id: "intro-video") %>
+	<%= video_tag("intro.mov", loop: true, muted: true, autoplay: true, class: "fullscreen-bg-video", id: "intro-video") %>
 	<div id="intro-text-wrapper">
-		<div id="intro-text-box">
-			<div id="intro-text">
-				<div id="intro-top">
-					<h3 id="intro-header">Mic Drop</h3>
-					<h5>Your Resource for Microphone Shootouts</h5>
-				</div>
-				<p> Created by Web Developer and Audio Engineer, Christopher Chan, to help fellow recording engineers
-					better understand the equipment they are looking to use or purchase. Currently in beta-testing, this
-					site will be experiencing on-going changes without warning.
-				</p>
+		<div id="about-text-box">
+			<div id="intro-top">
+				<h3 id="intro-header">Mic Drop</h3>
+				<h5>Your Resource for Microphone Shootouts</h5>
 			</div>
+			<p> Created by Web Developer and Audio Engineer, Christopher Chan, to help fellow recording engineers
+				better understand the equipment they are looking to use or purchase. Currently in beta-testing, this
+				site will be experiencing on-going changes without warning.
+			</p>
 		</div>
 	</div>
+	<div class="option-row hide-on-large-only mic-drop-font" id="option-row-about">
+			<%= link_to "Instruments", instruments_path, class: "option-btn" %>
+			<%= link_to "Manufacturers", manufacturers_path, class: "option-btn" %>
+		</div>
 </div>
