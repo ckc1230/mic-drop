@@ -78,6 +78,7 @@
 }
 
 .main-nav {
+    min-width: 450px;
     height: 65px;
     line-height: 65px;
     background: black;
