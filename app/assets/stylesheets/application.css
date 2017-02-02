@@ -723,3 +723,46 @@
     }
 } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .landing-container {
+        height: 100vh;
+    }
+
+    #landing-text {
+        top: 20vh;
+        left: 8% !important;
+    }
+
+    #landing-text h3 {
+        font-size: 160px;
+    }
+    #landing-text h5 {
+        margin-top: 50px;
+        font-size: 60px;
+        font-family: 'Bungee Inline', cursive;    
+    }
+    #landing-text ul {
+        margin-top: 50px;
+        font-size: 50px;
+        padding: 0 35px 0 20px;
+    }
+    #landing-text li {
+        margin-bottom: 30px; 
+    }
+    .option-row {
+        top: 70vh;
+    }
+    .option-btn {
+        width: 70%;
+        height: 150px;
+        line-height: 150px;
+        margin-bottom: 50px;
+        font-size: 50px; 
+    }
+}
