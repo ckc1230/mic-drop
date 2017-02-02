@@ -731,7 +731,7 @@
   and (orientation: portrait) {
 
     .landing-container {
-        height: 100vh;
+        height: 97vh;
     }
 
     #landing-text {
@@ -765,4 +765,93 @@
         margin-bottom: 50px;
         font-size: 50px; 
     }
+    #shootouts {
+        font-size: 55px;
+        text-align: center;
+    }
+    .index-section-hr {
+        margin: 0 auto;
+        width: 80%;
+    }
+    .shootout-item {
+        height: 80px;
+        line-height: 80px;
+        font-size: 35px;
+        text-align: center;
+        font-family: 'Bungee Inline', cursive;
+        color: black;
+    }
+    .go-to-mic-btn {
+        height: 80px;
+        line-height: 80px;
+        font-size: 35px;
+        margin-left: 10px;
+    }
+    .instrument-index-img-div {
+        max-width: 700px;
+        width: 700px;
+        height: 200px;
+        max-height: 200px; 
+    }
+    .instrument-index-img-div p {
+        font-size: 60px;
+    }
+    .index-section-header {
+        font-size: 55px;
+    }
+    .med-header {
+        font-size: 25px;
+    }
+    .instrument-index-img-div-small {
+        height: 105px;
+        max-height: 105px;
+        width: 200px;
+        max-width: 200px;
+    }
+    .instrument-index-img-div-small p {
+        font-size: 30px;
+    }
+    .instrument-index-img-div p {
+        text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+    }
+    .no-shootout-msg {
+        font-size: 30px;
+    }
+    .manu-index-img-div {
+        width: 250px;
+        height: 250px;
+        margin: 0 70px;
+    }
+    .signup-container {
+        background-repeat: no-repeat;
+        background-size: auto 100%; 
+    }
+    .signup-disclaimer {
+        display: none;
+    }
+    .signup-form {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 50px 100px !important;
+    }
+    .signup-form h2 {
+        text-align: center;
+        font-size: 60px;
+    }
+    .signup-form label {
+        font-size: 30px;
+    }
+    .signup-form input {
+        height: 60px;
+        line-height: 60px;
+        font-size: 30px;
+        margin-bottom: 60px;
+    }
+    .apple_pagination {
+      font-size: 30px;
+    }
+    .apple_pagination .disabled {
+        color: grey; 
+    }
+
 }
