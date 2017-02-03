@@ -518,10 +518,6 @@
     color: black;      /* unvisited link */
 }
 
-.manu-mic-display:hover {
-    background: #FDF1FF;
-}
-
 .manual-header-margin {
     line-height: 30px;
 }
@@ -729,16 +725,40 @@
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
-
+    
+    .main-nav {
+        height: 100px;
+    }
+    .person-icon {
+        display: none !important;
+    }
+    .dropdown-button {
+        font-size: 2em;
+        vertical-align: middle;
+        line-height: 100px;
+        font-family: 'Bungee Inline', cursive;    
+    }
+    .dropdown-button i {
+        line-height: 100px !important;
+        font-size: 50px !important;        
+    }
+    .mobile-less-top {
+        margin-top: 40px !important;
+    }
+    .brand-logo {
+        line-height: 100px;
+        font-size: 60px !important;
+    }
+    .brand-logo {
+        height: 100%;
+    }
     .landing-container {
         height: 97vh;
     }
-
     #landing-text {
         top: 20vh;
         left: 8% !important;
     }
-
     #landing-text h3 {
         font-size: 160px;
     }
@@ -798,6 +818,7 @@
     }
     .index-section-header {
         font-size: 55px;
+        margin-top: 70px;
     }
     .med-header {
         font-size: 25px;
@@ -821,6 +842,41 @@
         width: 250px;
         height: 250px;
         margin: 0 70px;
+    }
+    .manu-mic-display {
+        width: 100% !important;
+        height: 300px;
+        font-size: 20px;
+        font-family: 'Bungee Inline', cursive;
+    }
+    .manu-mic-display div {
+        margin: 0 20px !important;
+    }
+    .manu-mic-display table {
+        margin-bottom: 60px;
+    }
+    .manu-mic-display h5 {
+        font-size: 50px;
+    }
+    .mic-info-image {
+        width: 100% !important;
+        text-align: center;
+        border: 0;
+    }
+    .mic-info-image img {
+        height: 700px;
+    }
+    .mic-info-spec h5 {
+        font-size: 2em;
+        margin: 50px auto;
+        text-align: center;
+    }
+    .mic-info-spec {
+        font-size: 2em;
+        width: 100% !important;
+    }
+    .manu-info-link {
+        font-size: 2em;
     }
     .signup-container {
         background-repeat: no-repeat;
