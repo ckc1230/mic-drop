@@ -909,5 +909,20 @@
     .apple_pagination .disabled {
         color: grey; 
     }
-
+    .audio-track {
+        display: none;
+    }
+    .playlist-btn {
+        display: inline-block;
+        font-size: 22px;
+        margin: 0 20px;
+    }
+    .pause {
+        float: right;
+        color: transparent;
+    }
+    .pause i {
+        vertical-align: middle;
+        padding-left: 5px;
+    }
 }

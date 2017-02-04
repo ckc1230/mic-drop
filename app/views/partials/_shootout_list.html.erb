@@ -20,10 +20,12 @@
             </div>
 			<div class="col s9 m9 audiowrap">
                 <div class="row">
-                    <audio preload class="audio-track" controls="controls" id="shootout-audio-<%= shootout.id %>">
+                    <audio preload class="audio-track" controls="controls" id="shootout-audio-<%= shootout.id %>" onended="hidePause()">
                     <source class="audio-source" src="<%= shootout.shootout_microphones.first.audio.url %>">
                     	Your browser does not support HTML5 Audio!
                     </audio>
+                    <div class="playlist-btn choose" hidden>Choose A Microphone To Hear</div>
+                    <div class="playlist-btn pause" hidden>Pause<i class="material-icons">pause</i></div>
                 </div>
         		<div class="row">
                     <div class="collection shootout-list">

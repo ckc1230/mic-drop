@@ -40,6 +40,7 @@ $(document).on('turbolinks:load', function() {
   $('#new-shootout-4 *').prop('disabled',true);
   $('#new-shootout-5 *').prop('disabled',true);
   $('#landing-text').css('left', '10%');
+  $('.pause').on('click', pauseAudio);
 });
 
 function playSound(e) {
@@ -50,11 +51,25 @@ function playSound(e) {
   $(this).closest('.shootout-container').find('.audio-source').attr("src", currentMicAudio)
   $(this).closest('.shootout-container').find('.current-mic-manu').html(currentMic);
   $(this).closest('.shootout-container').find('.current-mic-img').attr("src", currentMicImg)
+  $('.pause').css('color', 'transparent');  
+  $(this).closest('.shootout-container').find('.pause').css('color', 'white');
   $('audio').each(function(){
     $(this)[0].pause();
   }); 
   $(this).closest('.shootout-container').find(".audio-track")[0].load();
   $(this).closest('.shootout-container').find(".audio-track")[0].play();
+}
+
+function pauseAudio(e) {
+  e.preventDefault();
+  $('audio').each(function(){
+    $(this)[0].pause();
+  });
+  $(this).closest('.shootout-container').find('.pause').css('color', 'transparent');
+}
+
+function hidePause() {
+  $('.pause').css('color', 'transparent');  
 }
 
 function muteVideo() {
