@@ -112,7 +112,6 @@
     color: white;
     text-align: left;
     display: table;
-    width: 50%;
 }
 
 #intro-text {
@@ -742,6 +741,19 @@
         line-height: 100px !important;
         font-size: 50px !important;        
     }
+    .dropdown-content {
+        width: 300px !important;
+        right: 0 !important;
+    }
+    .dropdown-content a {
+        text-align: center;
+        font-size: 30px !important;
+        color: black !important;
+        height: 80px;
+        line-height: 50px !important;
+        vertical-align: middle;
+        font-family: 'Bungee Inline', cursive;    
+    }
     .mobile-less-top {
         margin-top: 40px !important;
     }
@@ -761,6 +773,7 @@
     }
     #landing-text h3 {
         font-size: 160px;
+        text-align: center;
     }
     #landing-text h5 {
         margin-top: 50px;
@@ -770,7 +783,7 @@
     #landing-text ul {
         margin-top: 50px;
         font-size: 50px;
-        padding: 0 35px 0 20px;
+        padding: 0 55px 0 0;
     }
     #landing-text li {
         margin-bottom: 30px; 
@@ -887,7 +900,7 @@
     }
     .signup-form {
         width: 100% !important;
-        margin: 0 !important;
+        margin: 50px 0 0 0 !important;
         padding: 50px 100px !important;
     }
     .signup-form h2 {
